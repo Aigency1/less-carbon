@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supplier Carbon Assessment for SMEs in 7 Days | Less Carbon</title>
+<meta name="description" content="A customer asked for your carbon data? Get a Supplier Emissions Certificate recognised under AASB S2 in 7 days. Affordable pricing, calculated online. Australian SMEs. Start now.">
+<meta name="theme-color" content="#0A2540">
+<link rel="canonical" href="https://lesscarbon.com.au/sme">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Supplier Carbon Assessment for SMEs in 7 Days | Less Carbon">
+<meta property="og:description" content="Scope 1 + 2 Supplier Emissions Certificate, recognised under AASB S2, in 7 business days. Affordable pricing, calculated online. Built for Australian SMEs.">
+<meta property="og:url" content="https://lesscarbon.com.au/sme">
+<meta property="og:locale" content="en_AU">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --lc-navy:#0A2540;
+    --lc-navy-deep:#06182B;
+    --lc-blue:#2563EB;
+    --lc-text:#102133;
+    --lc-muted:#5B6B7A;
+    --lc-light:#F5F8FC;
+    --lc-border:#DCE5EF;
+    --lc-white:#FFFFFF;
+    --lc-accent:#C6F26B;
+    --lc-warn:#F4B740;
+    --radius:10px;
+    --radius-lg:14px;
+    --container:1240px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    color:var(--lc-text);
+    background:var(--lc-white);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    font-feature-settings:"ss01","cv11";
+  }
+  .wrap{max-width:var(--container);margin:0 auto;padding:0 28px}
+  img{max-width:100%;display:block}
+  a{color:var(--lc-blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* STRIP + NAV (matches homepage) */
+  .strip{background:var(--lc-navy);color:#fff;font-size:13px;padding:10px 0;text-align:center;letter-spacing:.01em}
+  .strip strong{color:var(--lc-accent);font-weight:600}
+  .strip .sep{opacity:.35;margin:0 10px}
+  .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid var(--lc-border)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+  .logo{display:flex;align-items:center;gap:10px;color:var(--lc-navy);font-family:'Fraunces',serif;font-weight:600;font-size:22px;letter-spacing:-0.01em}
+  .logo-mark{width:34px;height:34px;border-radius:8px;background:var(--lc-navy);display:grid;place-items:center;color:var(--lc-accent);font-family:'Fraunces',serif;font-weight:600;font-size:18px}
+  .nav-links{display:flex;align-items:center;gap:28px}
+  .nav-links a{color:var(--lc-text);font-size:14px;font-weight:500}
+  /* nav one-line fix (Registry added) */
+  .nav .wrap{max-width:1320px;gap:16px}
+  .logo,.nav-links a,.nav .btn{white-space:nowrap}
+  .nav-links{gap:20px}
+  @media (max-width:1240px){.nav-links{display:none}.nav .menu-btn{display:block}}
+  .nav-links a.active{color:var(--lc-blue);font-weight:600}
+  .nav-links a:hover{color:var(--lc-blue);text-decoration:none}
+  .nav-cta{display:flex;gap:10px;align-items:center}
+  .menu-btn{display:none;background:none;border:1px solid var(--lc-border);width:42px;height:42px;border-radius:8px;cursor:pointer}
+  .menu-btn span{display:block;width:18px;height:2px;background:var(--lc-navy);margin:4px auto;border-radius:2px}
+
+  /* BUTTONS */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:8px;font-weight:600;font-size:14px;border:1px solid transparent;cursor:pointer;transition:transform .15s ease, box-shadow .2s ease, background .2s ease;line-height:1}
+  .btn:hover{text-decoration:none;transform:translateY(-1px)}
+  .btn-primary{background:var(--lc-blue);color:#fff}
+  .btn-primary:hover{background:#1d4ed8;box-shadow:0 8px 22px -8px rgba(37,99,235,.55)}
+  .btn-accent{background:var(--lc-accent);color:var(--lc-navy)}
+  .btn-accent:hover{background:#b8e859;box-shadow:0 8px 22px -8px rgba(198,242,107,.6)}
+  .btn-ghost{background:#fff;color:var(--lc-navy);border-color:var(--lc-border)}
+  .btn-ghost:hover{border-color:var(--lc-navy)}
+  .btn-dark{background:var(--lc-navy);color:#fff}
+  .btn-dark:hover{background:#102133}
+  .btn-lg{padding:16px 26px;font-size:15px}
+  .btn .arrow{transition:transform .2s ease;display:inline-block}
+  .btn:hover .arrow{transform:translateX(3px)}
+
+  /* BREADCRUMB */
+  .crumb{padding:18px 0;font-size:13px;color:var(--lc-muted);background:var(--lc-light);border-bottom:1px solid var(--lc-border)}
+  .crumb a{color:var(--lc-muted);font-weight:500}
+  .crumb .sep{margin:0 8px;opacity:.5}
+  .crumb .current{color:var(--lc-navy);font-weight:600}
+
+  /* HERO */
+  .hero{background:linear-gradient(180deg,#fff 0%, #F5F8FC 100%);padding:64px 0 84px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-200px;top:-120px;width:780px;height:780px;border-radius:50%;background:radial-gradient(circle, rgba(198,242,107,.22), rgba(198,242,107,0) 60%);pointer-events:none;z-index:0}
+  .hero .wrap{position:relative;z-index:1}
+  .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:64px;align-items:center}
+  .eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--lc-blue);font-weight:700;margin-bottom:18px;display:inline-flex;align-items:center;gap:8px}
+  .eyebrow::before{content:"";display:inline-block;width:24px;height:1px;background:var(--lc-blue)}
+  h1{font-family:'Fraunces',serif;font-size:clamp(38px,5vw,62px);font-weight:600;line-height:1.04;letter-spacing:-0.02em;color:var(--lc-navy);margin-bottom:22px}
+  h1 em{font-style:italic;color:var(--lc-blue);font-weight:500}
+  h1 .hl{background:linear-gradient(180deg,transparent 64%,var(--lc-accent) 64%);padding:0 4px}
+  .lede{font-size:18px;line-height:1.55;color:var(--lc-text);max-width:580px;margin-bottom:30px}
+  .lede strong{color:var(--lc-navy);font-weight:600}
+
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+  .hero-meta{display:flex;gap:24px;flex-wrap:wrap;font-size:13px;color:var(--lc-muted);align-items:center}
+  .hero-meta .dot{width:6px;height:6px;border-radius:50%;background:var(--lc-accent);display:inline-block;margin-right:6px;vertical-align:1px}
+  .hero-meta strong{color:var(--lc-navy);font-weight:600}
+  .hero-tertiary{margin-top:14px;font-size:13px;color:var(--lc-muted)}
+  .hero-tertiary a{color:var(--lc-navy);font-weight:600;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--lc-accent);text-decoration-thickness:2px}
+
+  /* HERO EMAIL SIM (the trigger moment visualised) */
+  .email-card{background:#fff;border:1px solid var(--lc-border);border-radius:14px;padding:0;max-width:460px;width:100%;box-shadow:0 30px 80px -30px rgba(10,37,64,.32), 0 12px 28px -18px rgba(10,37,64,.18);overflow:visible;position:relative;margin-top:14px}
+  .email-head{padding:18px 22px 14px;border-bottom:1px solid var(--lc-border);background:var(--lc-light);border-radius:14px 14px 0 0}
+  .email-head .from{font-size:11px;color:var(--lc-muted);text-transform:uppercase;letter-spacing:.12em;font-weight:600;margin-bottom:6px}
+  .email-head .sender{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .email-head .name{font-size:14px;color:var(--lc-navy);font-weight:600;line-height:1.3}
+  .email-head .org{font-size:12px;color:var(--lc-muted)}
+  .email-head .when{font-size:11px;color:var(--lc-muted);white-space:nowrap}
+  .email-body{padding:22px}
+  .email-body .subj{font-family:'Fraunces',serif;font-size:18px;color:var(--lc-navy);font-weight:600;margin-bottom:14px;line-height:1.25;letter-spacing:-0.01em}
+  .email-body p{font-size:14px;color:var(--lc-text);line-height:1.55;margin-bottom:12px}
+  .email-body p .hl{background:linear-gradient(180deg,transparent 64%,var(--lc-accent) 64%);padding:0 3px}
+  .email-body .ask{padding:14px;background:var(--lc-light);border-left:3px solid var(--lc-blue);border-radius:4px;font-size:13px;color:var(--lc-text);margin:14px 0;line-height:1.5}
+  .email-body .ask strong{color:var(--lc-navy)}
+  .email-foot{padding:14px 22px;border-top:1px solid var(--lc-border);font-size:12px;color:var(--lc-muted);background:#FAFBFD;display:flex;justify-content:space-between;align-items:center}
+  .email-tag{position:absolute;top:-12px;right:18px;background:var(--lc-navy);color:var(--lc-accent);padding:6px 12px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;border-radius:6px;box-shadow:0 6px 14px -4px rgba(10,37,64,.3)}
+
+  /* SECTION DEFAULTS */
+  section{padding:88px 0;border-bottom:1px solid var(--lc-border)}
+  .alt{background:var(--lc-light)}
+  .dark{background:var(--lc-navy);color:#fff;border-bottom:none}
+  .dark h2{color:#fff}
+  .dark h2 em{color:var(--lc-accent)}
+  .dark .section-lede{color:rgba(255,255,255,.65)}
+  .dark .eyebrow{color:var(--lc-accent)}
+  .dark .eyebrow::before{background:var(--lc-accent)}
+  .section-head{max-width:760px;margin-bottom:54px}
+  h2{font-family:'Fraunces',serif;font-size:clamp(32px,3.8vw,46px);font-weight:600;line-height:1.1;letter-spacing:-0.02em;color:var(--lc-navy);margin-bottom:18px}
+  h2 em{font-style:italic;color:var(--lc-blue);font-weight:500}
+  .section-lede{font-size:17px;line-height:1.55;color:var(--lc-muted)}
+
+  /* THIS IS HAPPENING */
+  .domino{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .dom-card{background:#fff;border:1px solid var(--lc-border);border-radius:var(--radius-lg);padding:32px 28px;position:relative;display:flex;flex-direction:column;transition:transform .2s ease, box-shadow .2s ease}
+  .dom-card:hover{transform:translateY(-4px);box-shadow:0 22px 50px -28px rgba(10,37,64,.2)}
+  .dom-stat{font-family:'Fraunces',serif;font-size:54px;font-weight:600;color:var(--lc-navy);line-height:1;letter-spacing:-0.03em;margin-bottom:14px}
+  .dom-stat span{font-size:24px;color:var(--lc-blue);vertical-align:18px;margin-left:2px}
+  .dom-card h3{font-family:'Fraunces',serif;font-size:21px;font-weight:600;color:var(--lc-navy);margin-bottom:10px;line-height:1.2;letter-spacing:-0.01em}
+  .dom-card p{font-size:14px;color:var(--lc-text);line-height:1.6}
+  .dom-src{margin-top:18px;padding-top:18px;border-top:1px solid var(--lc-border);font-size:11px;color:var(--lc-muted);letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+
+  /* WHAT YOU RECEIVE */
+  .receive-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center}
+  .receive-list{display:flex;flex-direction:column;gap:18px}
+  .receive-item{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--lc-border)}
+  .receive-item:last-child{border-bottom:none}
+  .receive-check{flex:0 0 28px;height:28px;border-radius:50%;background:var(--lc-accent);display:grid;place-items:center;color:var(--lc-navy)}
+  .receive-item h4{font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--lc-navy);margin-bottom:4px;letter-spacing:-0.01em;line-height:1.2}
+  .receive-item p{font-size:14px;color:var(--lc-muted);line-height:1.55}
+  .receive-cta{margin-top:24px;display:flex;gap:14px;flex-wrap:wrap}
+
+  .cert{background:#fff;border:1px solid var(--lc-border);border-radius:6px;width:100%;max-width:420px;padding:28px;box-shadow:0 30px 80px -30px rgba(10,37,64,.32), 0 12px 28px -18px rgba(10,37,64,.18);position:relative;transform:rotate(-1.5deg);margin:0 auto}
+  .cert::before{content:"";position:absolute;top:-12px;left:-12px;right:14px;bottom:14px;background:var(--lc-accent);border-radius:6px;z-index:-1;opacity:.6}
+  .cert-head{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid var(--lc-border);padding-bottom:14px;margin-bottom:18px}
+  .cert-brand{font-family:'Fraunces',serif;font-weight:600;color:var(--lc-navy);font-size:15px;letter-spacing:-0.01em}
+  .cert-brand span{display:block;font-family:'Inter',sans-serif;font-size:9px;letter-spacing:.18em;color:var(--lc-muted);font-weight:600;text-transform:uppercase;margin-top:2px}
+  .cert-id{font-size:10px;color:var(--lc-muted);text-align:right}
+  .cert-id strong{display:block;color:var(--lc-navy);font-family:'Fraunces',serif;font-size:13px;font-weight:600;letter-spacing:.04em}
+  .cert-title{font-family:'Fraunces',serif;font-size:22px;color:var(--lc-navy);line-height:1.15;margin-bottom:6px;font-weight:600;letter-spacing:-0.01em}
+  .cert-subtitle{font-size:11px;color:var(--lc-muted);text-transform:uppercase;letter-spacing:.12em;font-weight:600;margin-bottom:18px}
+  .cert-business{font-family:'Fraunces',serif;font-size:16px;color:var(--lc-text);margin-bottom:18px}
+  .cert-numbers{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;padding:14px;background:var(--lc-light);border-radius:6px}
+  .cert-numbers .nm{font-size:9px;color:var(--lc-muted);text-transform:uppercase;letter-spacing:.14em;font-weight:700;margin-bottom:2px}
+  .cert-numbers .val{font-family:'Fraunces',serif;font-size:22px;color:var(--lc-navy);font-weight:600;line-height:1}
+  .cert-numbers .unit{font-size:11px;color:var(--lc-muted);font-weight:500;margin-left:3px}
+  .cert-foot{display:flex;justify-content:space-between;align-items:flex-end;font-size:10px;color:var(--lc-muted)}
+  .cert-foot strong{color:var(--lc-navy);font-weight:600;display:block}
+  .cert-seal{width:50px;height:50px;border-radius:50%;background:var(--lc-accent);display:grid;place-items:center;color:var(--lc-navy);font-family:'Fraunces',serif;font-weight:700;font-size:11px;line-height:1.1;text-align:center;letter-spacing:.04em}
+  .cert-watermark{position:absolute;bottom:14px;right:18px;font-size:9px;color:var(--lc-muted);letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+
+  /* HOW IT WORKS (same icons as homepage) */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
+  .steps::before{content:"";position:absolute;top:48px;left:6%;right:6%;height:2px;background:repeating-linear-gradient(to right, var(--lc-border) 0 8px, transparent 8px 16px);z-index:0}
+  .step{background:#fff;border:1px solid var(--lc-border);border-radius:var(--radius-lg);padding:28px 24px;position:relative;z-index:1;display:flex;flex-direction:column;transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease}
+  .step:hover{transform:translateY(-4px);border-color:var(--lc-navy);box-shadow:0 22px 50px -28px rgba(10,37,64,.2)}
+  .step-num{position:absolute;top:-12px;right:18px;background:var(--lc-navy);color:var(--lc-accent);font-family:'Fraunces',serif;font-weight:600;font-size:12px;padding:5px 10px;border-radius:999px;letter-spacing:.12em;text-transform:uppercase}
+  .step-icon{width:64px;height:64px;border-radius:14px;background:var(--lc-light);display:grid;place-items:center;margin-bottom:18px;border:1px solid var(--lc-border)}
+  .step-icon svg{width:36px;height:36px}
+  .step h3{font-family:'Fraunces',serif;font-size:19px;font-weight:600;color:var(--lc-navy);margin-bottom:10px;letter-spacing:-0.01em;line-height:1.2}
+  .step p{font-size:14px;color:var(--lc-muted);line-height:1.5}
+  .step .step-time{margin-top:auto;padding-top:14px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--lc-blue);font-weight:700}
+
+  /* PRICING (calculated model) */
+  .price-anchor{background:#fff;border:1px solid var(--lc-border);border-radius:var(--radius-lg);padding:36px 40px;display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center;margin-bottom:42px;box-shadow:0 12px 28px -18px rgba(10,37,64,.18);position:relative;overflow:hidden}
+  .price-anchor::after{content:"";position:absolute;right:-100px;top:-50px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(198,242,107,.16),transparent 60%);pointer-events:none}
+  .price-anchor .from-block{position:relative;z-index:1;border-right:1px solid var(--lc-border);padding-right:32px}
+  .price-anchor .from-label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--lc-muted);font-weight:700;margin-bottom:6px}
+  .price-anchor .from-amt{font-family:'Fraunces',serif;font-size:52px;color:var(--lc-navy);font-weight:600;line-height:1;letter-spacing:-0.03em}
+  .price-anchor .from-amt span{font-size:16px;color:var(--lc-muted);font-weight:500;font-family:'Inter',sans-serif;letter-spacing:0;margin-left:6px}
+  .price-anchor .from-note{position:relative;z-index:1}
+  .price-anchor .from-note h3{font-family:'Fraunces',serif;font-size:20px;color:var(--lc-navy);font-weight:600;margin-bottom:6px;letter-spacing:-0.01em;line-height:1.2}
+  .price-anchor .from-note p{font-size:14px;color:var(--lc-muted);line-height:1.55}
+  .price-anchor .from-cta{position:relative;z-index:1}
+
+  .sub-h3{font-family:'Fraunces',serif;font-size:24px;color:var(--lc-navy);font-weight:600;letter-spacing:-0.01em;margin-bottom:8px;line-height:1.2}
+  .sub-lede{font-size:15px;color:var(--lc-muted);line-height:1.55;margin-bottom:24px;max-width:680px}
+
+  .drivers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:48px}
+  .driver{background:#fff;border:1px solid var(--lc-border);border-radius:var(--radius);padding:20px 22px;display:flex;gap:14px;align-items:flex-start;transition:all .2s ease}
+  .driver:hover{border-color:var(--lc-navy);transform:translateY(-2px);box-shadow:0 12px 28px -16px rgba(10,37,64,.18)}
+  .driver .di{flex:0 0 36px;height:36px;background:var(--lc-light);border:1px solid var(--lc-border);border-radius:8px;display:grid;place-items:center;color:var(--lc-blue)}
+  .driver h4{font-family:'Fraunces',serif;font-size:15px;color:var(--lc-navy);font-weight:600;letter-spacing:-0.01em;margin-bottom:4px;line-height:1.25}
+  .driver p{font-size:13px;color:var(--lc-muted);line-height:1.5}
+
+  .examples-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px}
+  .example{background:#fff;border:1px solid var(--lc-border);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;transition:all .2s ease}
+  .example:hover{border-color:var(--lc-navy);transform:translateY(-3px);box-shadow:0 18px 40px -22px rgba(10,37,64,.2)}
+  .example .ex-tag{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--lc-blue);font-weight:700;margin-bottom:12px}
+  .example h4{font-family:'Fraunces',serif;font-size:18px;color:var(--lc-navy);font-weight:600;letter-spacing:-0.01em;margin-bottom:10px;line-height:1.2}
+  .example .ex-profile{font-size:13px;color:var(--lc-muted);line-height:1.55;margin-bottom:16px;flex-grow:1}
+  .example .ex-profile strong{color:var(--lc-text);font-weight:600;display:block;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;color:var(--lc-navy)}
+  .example .ex-price{padding-top:14px;border-top:1px solid var(--lc-border);display:flex;justify-content:space-between;align-items:baseline}
+  .example .ex-price .amt{font-family:'Fraunces',serif;font-size:24px;color:var(--lc-navy);font-weight:600;letter-spacing:-0.02em;line-height:1}
+  .example .ex-price .ind{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--lc-muted);font-weight:700}
+
+  .examples-disclaimer{font-size:12px;color:var(--lc-muted);text-align:center;padding:14px;background:var(--lc-light);border-radius:var(--radius);border:1px dashed var(--lc-border);max-width:760px;margin:0 auto 32px;line-height:1.55}
+  .examples-disclaimer strong{color:var(--lc-navy);font-weight:600}
+
+  .price-rush{background:#fff;border:1px solid var(--lc-border);border-radius:var(--radius);padding:24px 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+  .price-rush .rush-label{font-family:'Fraunces',serif;font-size:18px;color:var(--lc-navy);font-weight:600;letter-spacing:-0.01em}
+  .price-rush .rush-opts{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--lc-muted)}
+  .price-rush .rush-opts strong{color:var(--lc-navy);font-weight:600}
+
+  .price-foot{margin-top:32px;text-align:center;font-size:14px;color:var(--lc-muted);max-width:680px;margin-left:auto;margin-right:auto;line-height:1.6}
+  .price-foot strong{color:var(--lc-navy);font-weight:600}
+
+  /* METHODOLOGY STRIP */
+  .method-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .method-card{padding:28px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg)}
+  .method-card .icon{width:42px;height:42px;background:rgba(198,242,107,.12);color:var(--lc-accent);border-radius:10px;display:grid;place-items:center;margin-bottom:18px}
+  .method-card h3{font-family:'Fraunces',serif;font-size:20px;color:#fff;line-height:1.2;margin-bottom:10px;font-weight:600;letter-spacing:-0.01em}
+  .method-card p{font-size:14px;color:rgba(255,255,255,.65);line-height:1.55}
+  .method-card a{color:var(--lc-accent);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+
+  /* SECTORS */
+  .sectors{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .sector{background:#fff;border:1px solid var(--lc-border);border-radius:var(--radius);padding:24px 18px;text-align:center;transition:all .2s ease}
+  .sector:hover{border-color:var(--lc-navy);transform:translateY(-2px);box-shadow:0 12px 28px -16px rgba(10,37,64,.22)}
+  .sector .icon{width:40px;height:40px;margin:0 auto 12px;color:var(--lc-blue)}
+  .sector .name{font-size:13px;font-weight:600;color:var(--lc-navy);line-height:1.3}
+
+  /* FAQ */
+  .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 36px}
+  .faq{border-bottom:1px solid var(--lc-border);padding:22px 0}
+  .faq summary{font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--lc-navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:18px;letter-spacing:-0.01em;line-height:1.3}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";font-size:24px;color:var(--lc-blue);font-weight:400;line-height:1;flex-shrink:0;transition:transform .2s ease}
+  .faq[open] summary::after{transform:rotate(45deg)}
+  .faq[open] summary{color:var(--lc-blue)}
+  .faq p{padding-top:14px;font-size:15px;color:var(--lc-text);line-height:1.65;max-width:560px}
+
+  /* FINAL CTA */
+  .final{background:linear-gradient(135deg,var(--lc-navy) 0%,var(--lc-navy-deep) 100%);color:#fff;padding:96px 0;text-align:center;border-bottom:none;position:relative;overflow:hidden}
+  .final::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:1100px;height:1100px;border-radius:50%;background:radial-gradient(circle, rgba(198,242,107,.08), transparent 55%);pointer-events:none}
+  .final .wrap{position:relative;z-index:1}
+  .final .eyebrow{color:var(--lc-accent)}
+  .final .eyebrow::before{background:var(--lc-accent)}
+  .final h2{color:#fff;max-width:760px;margin:0 auto 20px}
+  .final h2 em{color:var(--lc-accent)}
+  .final p{font-size:17px;color:rgba(255,255,255,.7);max-width:580px;margin:0 auto 36px;line-height:1.5}
+  .final-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+  .final-tertiary{font-size:14px;color:rgba(255,255,255,.55)}
+  .final-tertiary a{color:var(--lc-accent);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+
+  /* FOOTER */
+  footer{background:#06182B;color:rgba(255,255,255,.6);padding:64px 0 32px;font-size:13px;line-height:1.55}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:24px}
+  .foot-col h5{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#fff;font-weight:700;margin-bottom:16px}
+  .foot-col a{display:block;color:rgba(255,255,255,.6);padding:5px 0;font-size:13px}
+  .foot-col a:hover{color:var(--lc-accent);text-decoration:none}
+  .foot-brand{font-family:'Fraunces',serif;font-size:24px;color:#fff;margin-bottom:14px;letter-spacing:-0.01em;font-weight:600}
+  .foot-brand-sub{font-size:13px;color:rgba(255,255,255,.5);margin-bottom:18px;line-height:1.55;max-width:300px}
+  .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:12px;color:rgba(255,255,255,.4)}
+  .foot-bottom a{color:rgba(255,255,255,.55)}
+
+  /* RESPONSIVE */
+  @media (max-width:980px){
+    section{padding:64px 0}
+    .hero{padding:48px 0 64px}
+    .hero-grid,.receive-grid{grid-template-columns:1fr;gap:40px}
+    .domino,.method-strip{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr 1fr}
+    .steps::before{display:none}
+    .drivers-grid,.examples-grid{grid-template-columns:1fr 1fr}
+    .price-anchor{grid-template-columns:1fr;gap:20px;padding:28px}
+    .price-anchor .from-block{border-right:none;border-bottom:1px solid var(--lc-border);padding-right:0;padding-bottom:20px}
+    .sectors{grid-template-columns:repeat(3,1fr)}
+    .faq-grid{grid-template-columns:1fr;gap:0}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
+    h1{font-size:clamp(34px,8vw,52px)}
+    h2{font-size:clamp(28px,5vw,40px)}
+    .nav-links{display:none}
+    .menu-btn{display:block}
+    .section-head{margin-bottom:36px}
+  }
+  @media (max-width:560px){
+    .steps,.drivers-grid,.examples-grid,.foot-grid{grid-template-columns:1fr}
+    .sectors{grid-template-columns:1fr 1fr}
+    .nav .wrap{height:64px}
+    .nav-cta .btn:not(.menu-btn){display:none}
+    .strip{font-size:12px;padding:9px 12px}
+    .strip .sep{display:none}
+    .cert{transform:rotate(0) scale(.95);max-width:340px}
+    .cert::before{display:none}
+    .hero-cta .btn,.final-cta .btn{width:100%}
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://lesscarbon.com.au/"},
+        {"@type":"ListItem","position":2,"name":"For SMEs","item":"https://lesscarbon.com.au/sme"}
+      ]
+    },
+    {
+      "@type":"Service",
+      "@id":"https://lesscarbon.com.au/sme#service",
+      "serviceType":"Carbon assessment and Supplier Emissions Certificate",
+      "name":"Supplier Emissions Certificate for Australian SMEs",
+      "description":"AI-run Scope 1 and 2 carbon assessment, producing a Supplier Emissions Certificate recognised under AASB S2 in 7 business days. Affordable pricing, individually calculated online before you pay.",
+      "provider":{"@type":"Organization","name":"Less Carbon","url":"https://lesscarbon.com.au/"},
+      "areaServed":{"@type":"Country","name":"Australia"},
+      "audience":{"@type":"BusinessAudience","audienceType":"Small to medium Australian businesses"},
+      "offers":{
+        "@type":"Offer",
+        "priceCurrency":"AUD",
+        "availability":"https://schema.org/InStock",
+        "description":"Affordable pricing, individually calculated by the intake form based solely on your particular circumstances (sites, vehicles, fuels, refrigeration, employees, ANZSIC category). Your final price is shown and locked before payment."
+      }
+    },
+    {
+      "@type":"FAQPage",
+      "@id":"https://lesscarbon.com.au/sme#faq",
+      "mainEntity":[
+        {"@type":"Question","name":"How do I know my customer will accept this certificate?","acceptedAnswer":{"@type":"Answer","text":"The certificate format is modelled on what major Australian procurement teams already accept. Download the sample to show your customer before you buy. If they reject the format, we re-work it."}},
+        {"@type":"Question","name":"I haven't done this before. What if I get something wrong?","acceptedAnswer":{"@type":"Answer","text":"You don't do calculations. You upload your bills and records. Our AI extracts the data, the rules engine does the maths, a human checks the result before the certificate issues."}},
+        {"@type":"Question","name":"Is it really 7 days?","acceptedAnswer":{"@type":"Answer","text":"7 business days from the moment your records are uploaded. The clock doesn't start until your data is in. One clean SLA, no rush tiers to decide between."}},
+        {"@type":"Question","name":"What does it cost?","acceptedAnswer":{"@type":"Answer","text":"Affordable pricing, calculated online before you pay. Your price is individually calculated based solely on your particular circumstances, from six drivers (sites, fleet, fuels, refrigeration, employees, ANZSIC category). You see the locked price on the order page before you pay. No quotes, no haggling."}},
+        {"@type":"Question","name":"What documents do I need to upload?","acceptedAnswer":{"@type":"Answer","text":"Electricity bills, gas bills, fuel invoices, vehicle records and any equipment or refrigerant records, all for the reporting period. We tell you exactly what's missing if anything is incomplete."}},
+        {"@type":"Question","name":"Will my data stay in Australia?","acceptedAnswer":{"@type":"Answer","text":"Yes. All data handling is Australian. Documents and assessments stay within Australian-hosted infrastructure."}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT STRIP -->
+<div class="strip">
+  <span><strong>AASB S2 reporting has already started.</strong></span>
+  <span class="sep">·</span>
+  <span>Get your Supplier Emissions Certificate in 7 business days. See your price before you pay.</span>
+</div>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap">
+    <a href="/" class="logo" aria-label="Less Carbon home">
+      <span class="logo-mark">L</span>
+      <span>Less Carbon</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/sme" class="active">For SMEs</a>
+      <a href="/reporting-entities">For Reporting Entities</a>
+      <a href="/partners">Partners</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/registry">Registry</a>
+      <a href="/pricing">Pricing</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="/pre-qualifier" class="btn btn-ghost">Check if you need one</a>
+      <a href="/start" class="btn btn-primary">Start my assessment</a>
+      <button class="menu-btn" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<nav class="crumb" aria-label="Breadcrumb">
+  <div class="wrap">
+    <a href="/">Home</a>
+    <span class="sep">/</span>
+    <span class="current">For SMEs</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h1">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">For Australian SMEs · 7-day turnaround</div>
+        <h1 id="hero-h1">A customer just asked for your <span class="hl">carbon data.</span> Have a certificate in their inbox by <em>Friday.</em></h1>
+        <p class="lede">
+          You don't need a consultant, a strategy day, or a $40,000 audit. You need a Supplier Emissions Certificate recognised under AASB S2 that your customer's procurement team will actually accept. <strong>Affordable pricing, calculated online before you pay. Seven business days.</strong> Done.
+        </p>
+
+        <div class="hero-cta">
+          <a href="/pre-qualifier" class="btn btn-accent btn-lg">Check if you need one <span class="arrow">&rarr;</span></a>
+          <a href="/start" class="btn btn-primary btn-lg">Start my assessment <span class="arrow">&rarr;</span></a>
+        </div>
+
+        <div class="hero-meta">
+          <span><span class="dot"></span><strong>7 business days</strong> standard turnaround</span>
+          <span><span class="dot"></span><strong>Price before you pay</strong>, no quotes</span>
+          <span><span class="dot"></span><strong>Australian-owned,</strong> Australian-hosted</span>
+        </div>
+
+        <div class="hero-tertiary">
+          Want to see what you'll get first? <a href="/sample-certificate">Download a sample certificate</a>.
+        </div>
+      </div>
+
+      <!-- HERO EMAIL: the trigger moment -->
+      <div class="hero-visual" aria-hidden="true">
+        <div class="email-card">
+          <div class="email-tag">The trigger moment</div>
+          <div class="email-head">
+            <div class="from">From · Procurement</div>
+            <div class="sender">
+              <div>
+                <div class="name">Sarah Patel</div>
+                <div class="org">Group Procurement, large customer</div>
+              </div>
+              <div class="when">Today, 9:14am</div>
+            </div>
+          </div>
+          <div class="email-body">
+            <div class="subj">Supplier sustainability data request &mdash; FY 2026 reporting</div>
+            <p>Hi team,</p>
+            <p>As part of our <span class="hl">AASB S2 climate disclosures</span> we need Scope 1 and 2 emissions data from our key suppliers, including yours.</p>
+            <div class="ask">
+              <strong>Can you confirm by 14 days from this email:</strong> a current Supplier Emissions Certificate or equivalent Scope 1 + 2 statement covering FY 2025/26.
+            </div>
+            <p>This is now a panel renewal requirement.</p>
+          </div>
+          <div class="email-foot">
+            <span>Reply needed by · 14 days</span>
+            <span style="color:var(--lc-blue);font-weight:600">14 days to reply</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THIS IS HAPPENING -->
+<section aria-labelledby="dom-h2">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">This is happening</div>
+      <h2 id="dom-h2">If you supply an ASX-listed company, the question is <em>when,</em> not whether.</h2>
+      <p class="section-lede">Three trends explain why the email arrived and why "we're working on it" is the wrong answer for an SME that wants to keep the contract.</p>
+    </div>
+    <div class="domino">
+      <article class="dom-card">
+        <div class="dom-stat">Every<span>yr</span></div>
+        <h3>This is an annual obligation, not a one-off.</h3>
+        <p>Your customer reports every year, so they'll ask you every year. Get it done once, then renew at a discount with last year's data pre-loaded. Most SME supply-chain emissions sit with suppliers like you, which is why the request keeps coming.</p>
+        <div class="dom-src">Source · PwC Net Zero Economy Index, 2024</div>
+      </article>
+      <article class="dom-card">
+        <div class="dom-stat">3-yr<span>wave</span></div>
+        <h3>AASB S2 has already started, and it rolls out in stages.</h3>
+        <p>Group 1 entities have reporting periods from 1 January 2025, Group 2 from 1 July 2026, Group 3 from 1 July 2027. Whichever group your customers sit in, the email is coming.</p>
+        <div class="dom-src">Source · AASB S2 standard, 2024</div>
+      </article>
+      <article class="dom-card">
+        <div class="dom-stat">1 in 3<span></span></div>
+        <h3>tender shortlists now include an emissions data question.</h3>
+        <p>Panel renewals, supplier reviews and procurement contracts are starting to score on emissions data alongside insurance and safety. No data, no points.</p>
+        <div class="dom-src">Source · NettZero Supplier Index, 2025</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU RECEIVE -->
+<section class="alt" aria-labelledby="rec-h2">
+  <div class="wrap">
+    <div class="receive-grid">
+      <div>
+        <div class="eyebrow">What you actually receive</div>
+        <h2 id="rec-h2">A document built for the people <em>asking the question.</em></h2>
+        <p class="section-lede" style="margin-bottom:30px">Most providers hand back a number. You get more than data: a carbon assessment <em>and</em> a registered Supplier Emissions Certificate, the document that shows your customer you're taking this seriously. Two deliverables, modelled on the supplier certificate formats large Australian procurement teams already accept, prepared using the recognised method your customer relies on for AASB S2-related Scope 3 reporting. No PDFs with stock photos. No "carbon offset" sleight of hand. The methodology, assumptions and numbers are on the page.</p>
+
+        <div class="receive-list">
+          <div class="receive-item">
+            <div class="receive-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div>
+              <h4>Your Carbon Assessment</h4>
+              <p>Methodology, emissions factors used, calculation breakdown by activity and assumptions log. The full record you keep on file for your accountant or auditor.</p>
+            </div>
+          </div>
+          <div class="receive-item">
+            <div class="receive-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div>
+              <h4>Registered Supplier Emissions Certificate</h4>
+              <p>Scope 1 + 2 totals, reporting period and a unique registered reference number, valid for unlimited use for 12 months. The thing you forward to your customer.</p>
+            </div>
+          </div>
+          <div class="receive-item">
+            <div class="receive-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div>
+              <h4>Discounted annual renewals</h4>
+              <p>Your customer will ask again next reporting period. Renew at a discount, with last year's data pre-loaded.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="receive-cta">
+          <a href="/sample-certificate" class="btn btn-primary btn-lg">Download a sample <span class="arrow">&rarr;</span></a>
+          <a href="/methodology" class="btn btn-ghost btn-lg">See the methodology</a>
+        </div>
+      </div>
+
+      <!-- SAMPLE CERTIFICATE VISUAL -->
+      <div aria-hidden="true">
+        <div class="cert">
+          <div class="cert-head">
+            <div class="cert-brand">Less Carbon<span>Supplier Emissions Certificate</span></div>
+            <div class="cert-id">Cert ID<strong>LC-2026-00428</strong></div>
+          </div>
+          <div class="cert-title">Scope 1 + 2 Emissions Statement</div>
+          <div class="cert-subtitle">Reporting period · FY 2025/26</div>
+          <div class="cert-business">Mahoney Logistics Pty Ltd · ABN 47 612 893 044</div>
+          <div class="cert-numbers">
+            <div>
+              <div class="nm">Scope 1 (direct)</div>
+              <div class="val">147.2<span class="unit">tCO₂e</span></div>
+            </div>
+            <div>
+              <div class="nm">Scope 2 (electricity)</div>
+              <div class="val">68.9<span class="unit">tCO₂e</span></div>
+            </div>
+          </div>
+          <div class="cert-foot">
+            <div>
+              <strong>Methodology</strong>
+              Govt &amp; industry standards<br>
+              Recognised under AASB S2
+            </div>
+            <div class="cert-seal">VERIFIED<br>2026</div>
+          </div>
+          <div class="cert-watermark">Sample · Not a real entity</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section aria-labelledby="how-h2">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">How it works</div>
+      <h2 id="how-h2">From customer email to certificate, in <em>4 visible steps.</em></h2>
+      <p class="section-lede">We run the methodology, QA and document production in the background, so you spend less than 30 minutes of your own time on the whole thing. No back-and-forth, no phone calls, no waiting.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">Step 01</div>
+        <div class="step-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="12" y="8" width="40" height="48" rx="3" stroke="#0A2540" stroke-width="2.4"/>
+            <path d="M22 22h20M22 32h20M22 42h12" stroke="#0A2540" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="48" cy="50" r="10" fill="#C6F26B" stroke="#0A2540" stroke-width="2.4"/>
+            <path d="M43.5 50l3.2 3.2 5.8-5.8" stroke="#0A2540" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Pre-Qualify</h3>
+        <p>Six questions confirm whether you need a Supplier Emissions Certificate, a bulk program, or nothing at all.</p>
+        <div class="step-time">5 minutes</div>
+      </div>
+      <div class="step">
+        <div class="step-num">Step 02</div>
+        <div class="step-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="8" y="14" width="48" height="36" rx="4" stroke="#0A2540" stroke-width="2.4"/>
+            <rect x="14" y="22" width="22" height="3.2" rx="1.6" fill="#C6F26B"/>
+            <rect x="14" y="30" width="36" height="2.4" rx="1.2" stroke="#0A2540" stroke-width="1.6"/>
+            <rect x="14" y="38" width="28" height="2.4" rx="1.2" stroke="#0A2540" stroke-width="1.6"/>
+            <path d="M44 22h8M44 22l-3-3M44 22l-3 3" stroke="#0A2540" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Tell us about your business</h3>
+        <p>Industry, vehicles, electricity, headcount. Price calculates from your answers. Fixed and visible. No quote required.</p>
+        <div class="step-time">10 minutes</div>
+      </div>
+      <div class="step">
+        <div class="step-num">Step 03</div>
+        <div class="step-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M14 38v8c0 2 1.6 3.6 3.6 3.6h28.8c2 0 3.6-1.6 3.6-3.6v-8" stroke="#0A2540" stroke-width="2.4" stroke-linecap="round"/>
+            <rect x="22" y="22" width="20" height="16" rx="2" stroke="#0A2540" stroke-width="2.4"/>
+            <path d="M28 28h8M28 32h6" stroke="#0A2540" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M32 8v18M32 8l-7 7M32 8l7 7" stroke="#C6F26B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M32 8v18M32 8l-7 7M32 8l7 7" stroke="#0A2540" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Upload your records</h3>
+        <p>Electricity bills, fuel invoices, vehicle logs. Drag and drop. We extract what's needed and flag anything missing.</p>
+        <div class="step-time">15 minutes</div>
+      </div>
+      <div class="step">
+        <div class="step-num">Step 04</div>
+        <div class="step-icon">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="14" y="10" width="36" height="44" rx="3" stroke="#0A2540" stroke-width="2.4"/>
+            <path d="M22 22h20M22 30h20M22 38h14" stroke="#0A2540" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="44" cy="46" r="9" fill="#C6F26B" stroke="#0A2540" stroke-width="2.4"/>
+            <path d="M44 41v10M40 44l4 4 5-7" stroke="#0A2540" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M37 56l3 6 4-3 4 3 3-6" stroke="#C6F26B" stroke-width="2.4" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Receive your certificate</h3>
+        <p>Your assessment and certificate arrive in your inbox. Forward to your customer. Request answered.</p>
+        <div class="step-time">7 business days</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING (calculated model) -->
+<section class="alt" aria-labelledby="price-h2">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">How pricing works</div>
+      <h2 id="price-h2">Fixed. Tailored. <em>Known before you commit.</em></h2>
+      <p class="section-lede">No quotes, no "contact us for pricing" theatre, no haggling. Your price is individually calculated based solely on your particular circumstances. The intake form asks the structured questions a consultant would, the rules engine calculates your price, and you see it on the order page before you pay. No phone call required.</p>
+    </div>
+
+    <div class="price-anchor">
+      <div class="from-block">
+        <div class="from-label">Pricing</div>
+        <div class="from-amt" style="font-size:30px;line-height:1.15">Affordable<br>pricing</div>
+      </div>
+      <div class="from-note">
+        <h3>Calculated online, before you pay</h3>
+        <p>Because the whole thing runs online, the price stays low and the turnaround stays at 7 business days. No consultant hourly rate, no scheduling, no friction. You see your exact number before you commit.</p>
+      </div>
+      <div class="from-cta">
+        <a href="/pre-qualifier" class="btn btn-primary">Check if I need one <span class="arrow">&rarr;</span></a>
+      </div>
+    </div>
+
+    <h3 class="sub-h3">What moves your price up the curve</h3>
+    <p class="sub-lede">The intake form asks structured questions about each of these inputs. Pricing is calculated automatically once you submit. No surprises after.</p>
+
+    <div class="drivers-grid">
+      <div class="driver">
+        <div class="di"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-6h6v6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <div>
+          <h4>Operational sites</h4>
+          <p>Single site is the floor. Each additional site adds setup, boundary and data-handling complexity.</p>
+        </div>
+      </div>
+      <div class="driver">
+        <div class="di"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="13" height="7" rx="1" stroke="currentColor" stroke-width="2"/><rect x="16" y="13" width="5" height="5" rx="1" stroke="currentColor" stroke-width="2"/><circle cx="7" cy="19" r="2" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="19" r="2" stroke="currentColor" stroke-width="2"/></svg></div>
+        <div>
+          <h4>Fleet and equipment</h4>
+          <p>Number and class of vehicles (passenger, light commercial, rigid, articulated, off-road, marine) and any mobile plant.</p>
+        </div>
+      </div>
+      <div class="driver">
+        <div class="di"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 22s-7-6-7-12a7 7 0 0114 0c0 6-7 12-7 12z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 6v6l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <div>
+          <h4>Stationary fuels</h4>
+          <p>Natural gas, LPG, diesel generators, boilers, process heat. Each fuel type adds a measurement boundary and source-document check.</p>
+        </div>
+      </div>
+      <div class="driver">
+        <div class="di"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="6" y="3" width="12" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M6 12h12M10 7h4M10 17h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <div>
+          <h4>Refrigeration and HVAC</h4>
+          <p>Cold rooms, commercial HVAC, refrigerated transport. Refrigerant tracking is a separate calculation pathway.</p>
+        </div>
+      </div>
+      <div class="driver">
+        <div class="di"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="7" r="3" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="9" r="2.5" stroke="currentColor" stroke-width="2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M13.5 20c0-2.8 2-5 4.5-5s4 2.2 4 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <div>
+          <h4>Employees and turnover</h4>
+          <p>Used to size organisational scope. Headcount and turnover band shift the assessment band, not pad the bill.</p>
+        </div>
+      </div>
+      <div class="driver">
+        <div class="di"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 7l9-4 9 4v10l-9 4-9-4V7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M3 7l9 4 9-4M12 11v10" stroke="currentColor" stroke-width="2"/></svg></div>
+        <div>
+          <h4>ANZSIC industry and process</h4>
+          <p>Industry classification surfaces sector-specific emissions sources (process, fugitive, agricultural) that change the methodology.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="sub-h3">Indicative worked examples</h3>
+    <p class="sub-lede">A few representative business profiles and where they typically land. Your number is calculated from your specific answers, but these help you locate yourself in the range.</p>
+
+    <div class="examples-grid">
+      <div class="example">
+        <div class="ex-tag">Example A · Simplest case</div>
+        <h4>Sole-trader consultant</h4>
+        <div class="ex-profile">
+          <strong>Profile</strong>
+          1 entity, 1 home office site, no fleet, purchased electricity only, 1&ndash;3 staff, sub-$500k turnover.
+        </div>
+        <div class="ex-price">
+          <span class="amt" style="font-size:16px">Lowest band</span>
+          <span class="ind">Calculated at intake</span>
+        </div>
+      </div>
+      <div class="example">
+        <div class="ex-tag">Example B · Common</div>
+        <h4>Small trades business</h4>
+        <div class="ex-profile">
+          <strong>Profile</strong>
+          1 entity, 1 site, 4 light commercial vehicles on fuel cards, mains electricity + LPG, 6&ndash;8 staff, $1&ndash;2m turnover.
+        </div>
+        <div class="ex-price">
+          <span class="amt" style="font-size:16px">Mid band</span>
+          <span class="ind">Calculated at intake</span>
+        </div>
+      </div>
+      <div class="example">
+        <div class="ex-tag">Example C · Larger SME</div>
+        <h4>Multi-site logistics SME</h4>
+        <div class="ex-profile">
+          <strong>Profile</strong>
+          2 depots, 15 vehicles (mix of light commercial + heavy rigid), diesel, refrigerated load, refrigeration plant, 25 staff, $10m+ turnover.
+        </div>
+        <div class="ex-price">
+          <span class="amt" style="font-size:16px">Higher band</span>
+          <span class="ind">Calculated at intake</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="examples-disclaimer">
+      <strong>Indicative only.</strong> Your final price calculates from your intake answers across all six driver categories. Worked examples are typical, not promised. The number you see on your order page is the number you pay.
+    </div>
+
+    <p class="price-foot">Not sure where you land? <strong>The 5-minute Pre-Qualifier confirms eligibility</strong>, then the intake form calculates your price before any commitment. If your business is more complex than a typical SME (multi-entity group, very large fleet, full Scope 3), <a href="/reporting-entities">a scoped enterprise program</a> covers it.</p>
+  </div>
+</section>
+
+<!-- METHODOLOGY STRIP -->
+<section class="dark" aria-labelledby="method-h2">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Methodology</div>
+      <h2 id="method-h2">Based on the standards your customer's <em>auditor expects.</em></h2>
+      <p class="section-lede">We have based our reporting on govt and industry standards, standardised formats that your clients will accept (and appreciate), exactly what they need. Three things make a Less Carbon certificate hold up when it lands on a procurement, sustainability or audit desk.</p>
+    </div>
+
+    <div class="method-strip">
+      <div class="method-card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v6c0 5 3.5 8.5 9 10 5.5-1.5 9-5 9-10V7l-9-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8 12l3 3 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Greenhouse Gas Protocol method</h3>
+        <p>We calculate using the Greenhouse Gas Protocol measurement approach and the Australian Government’s published NGA emission factors, in standardised formats your customers already accept. <a href="/methodology">See the full methodology &rarr;</a></p>
+      </div>
+      <div class="method-card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 3h18v18H3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M3 9h18M9 21V9" stroke="currentColor" stroke-width="2"/></svg></div>
+        <h3>Recognised under AASB S2</h3>
+        <p>Your certificate is calculated under the Greenhouse Gas Protocol, recognised under AASB S2, and built to feed the Scope 3 disclosure your customer needs. The credential they're asking for, in the form they expect.</p>
+      </div>
+      <div class="method-card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3>Human QA on every certificate</h3>
+        <p>AI runs the calculation. A qualified reviewer checks the output and signs off before the certificate issues. No "AI told us so" if it's ever questioned.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<section aria-labelledby="sec-h2">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Sectors we work with</div>
+      <h2 id="sec-h2">Built for the Australian businesses already being <em>asked.</em></h2>
+      <p class="section-lede">Our pricing tiers and emissions factors are calibrated for the SME sectors that supply Australia's reporting entities. If yours isn't listed, the Pre-Qualifier still applies.</p>
+    </div>
+
+    <div class="sectors">
+      <div class="sector">
+        <svg class="icon" viewBox="0 0 40 40" fill="none"><rect x="6" y="20" width="22" height="12" rx="2" stroke="currentColor" stroke-width="2"/><rect x="28" y="24" width="8" height="8" rx="1" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="33" r="3" stroke="currentColor" stroke-width="2"/><circle cx="30" cy="33" r="3" stroke="currentColor" stroke-width="2"/></svg>
+        <div class="name">Logistics &amp; transport</div>
+      </div>
+      <div class="sector">
+        <svg class="icon" viewBox="0 0 40 40" fill="none"><path d="M6 32V14l6-4 6 4 6-4 10 6v16H6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 32v-8h8v8M28 32v-6h-4" stroke="currentColor" stroke-width="2"/></svg>
+        <div class="name">Manufacturing</div>
+      </div>
+      <div class="sector">
+        <svg class="icon" viewBox="0 0 40 40" fill="none"><path d="M6 34h28M10 34V18l10-8 10 8v16M16 34v-8h8v8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <div class="name">Construction</div>
+      </div>
+      <div class="sector">
+        <svg class="icon" viewBox="0 0 40 40" fill="none"><rect x="8" y="10" width="24" height="24" rx="2" stroke="currentColor" stroke-width="2"/><path d="M14 16h12M14 22h12M14 28h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <div class="name">Property services</div>
+      </div>
+      <div class="sector">
+        <svg class="icon" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="14" r="5" stroke="currentColor" stroke-width="2"/><path d="M8 34c0-6 5-10 12-10s12 4 12 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <div class="name">Professional services</div>
+      </div>
+      <div class="sector">
+        <svg class="icon" viewBox="0 0 40 40" fill="none"><path d="M10 18h20l-2 16H12L10 18z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M16 18v-4a4 4 0 018 0v4" stroke="currentColor" stroke-width="2"/></svg>
+        <div class="name">Food &amp; beverage</div>
+      </div>
+      <div class="sector">
+        <svg class="icon" viewBox="0 0 40 40" fill="none"><path d="M20 6c4 6 8 9 8 15a8 8 0 01-16 0c0-6 4-9 8-15z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8 34h24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <div class="name">Agriculture</div>
+      </div>
+      <div class="sector">
+        <svg class="icon" viewBox="0 0 40 40" fill="none"><path d="M6 32l8-14 6 4 6-10 8 20H6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        <div class="name">Mining</div>
+      </div>
+      <!-- PENDING: third sector from Mitch (starts with "W" - Waste / Wholesale / Warehousing / Water). Add tile here once confirmed; grid is set to 4-wide so a 9th tile will wrap cleanly. -->
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="alt" aria-labelledby="faq-h2">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">SME questions, answered straight</div>
+      <h2 id="faq-h2">The six questions SMEs <em>ask first.</em></h2>
+      <p class="section-lede">If yours isn't here, the <a href="/methodology">methodology page</a> goes deeper. We update this page based on what customers actually ask.</p>
+    </div>
+    <div class="faq-grid">
+      <details class="faq" open>
+        <summary>How do I know my customer will accept this certificate?</summary>
+        <p>The certificate format is modelled on what major Australian procurement teams already accept. Download the sample and show your customer before you buy. If they reject the format, we re-work it.</p>
+      </details>
+      <details class="faq">
+        <summary>I haven't done this before. What if I get something wrong?</summary>
+        <p>You don't do calculations. You upload your bills and records. Our AI extracts the data, the rules engine does the maths, a human checks the result before the certificate issues.</p>
+      </details>
+      <details class="faq">
+        <summary>Is it really 7 days?</summary>
+        <p>7 business days from the moment your records are uploaded. The clock doesn't start until your data is in. One clean SLA, no rush tiers to decide between.</p>
+      </details>
+      <details class="faq">
+        <summary>What does it cost?</summary>
+        <p>Affordable pricing, calculated online before you pay. Your price is individually calculated based solely on your particular circumstances, from six drivers: sites, fleet, fuels, refrigeration, employees and ANZSIC category. You see the locked price on the order confirmation page before you pay. No quotes, no haggling.</p>
+      </details>
+      <details class="faq">
+        <summary>What documents do I need to upload?</summary>
+        <p>Electricity bills, gas bills, fuel invoices, vehicle records and any equipment or refrigerant records, all for the reporting period. We tell you exactly what's missing if anything is incomplete.</p>
+      </details>
+      <details class="faq">
+        <summary>Will my data stay in Australia?</summary>
+        <p>Yes. All data handling is Australian. Documents and assessments stay within Australian-hosted infrastructure.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="wrap">
+    <div class="eyebrow">Get it done</div>
+    <h2>Easy, painless, quick, affordable and <em>accepted.</em></h2>
+    <p>Get it done and get on with running your business. No meetings, no consultants, no pain. Five minutes on the Pre-Qualifier confirms your tier, or jump straight in and start the intake.</p>
+    <div class="final-cta">
+      <a href="/pre-qualifier" class="btn btn-accent btn-lg">Check if you need one <span class="arrow">&rarr;</span></a>
+      <a href="/start" class="btn btn-ghost btn-lg" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.25)">Start my assessment <span class="arrow">&rarr;</span></a>
+    </div>
+    <p class="final-tertiary">Want to see it before you start? <a href="/sample-certificate">Watch the 2-minute walk-through</a>.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <div class="foot-brand">Less Carbon</div>
+        <p class="foot-brand-sub">AI-run carbon assessments and Supplier Emissions Certificates. Australian SMEs and reporting entities. Built for the AASB S2 era.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Pathways</h5>
+        <a href="/sme">For SMEs</a>
+        <a href="/reporting-entities">For Reporting Entities</a>
+        <a href="/partners">For Partners</a>
+        <a href="/pricing">Pricing</a>
+      </div>
+      <div class="foot-col">
+        <h5>Proof</h5>
+        <a href="/methodology">Methodology</a>
+        <a href="/registry">Registry</a>
+        <a href="/sample-certificate">Sample certificate</a>
+        <a href="/about">About Less Carbon</a>
+        <a href="/faq">FAQ</a>
+      </div>
+      <div class="foot-col">
+        <h5>Start</h5>
+        <a href="/pre-qualifier">Pre-Qualifier</a>
+        <a href="/start">Start an assessment</a>
+        <a href="/sample-certificate">Download a sample</a>
+        <a href="/partners#apply">Become a partner</a>
+        <a href="https://www.linkedin.com/company/less-carbon" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 Less Carbon Corporate Services Pty Ltd · ABN 37 698 235 808 · Sydney, Australia</div>
+      <div><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq').forEach(faq => {
+    faq.addEventListener('toggle', () => {
+      if (faq.open) {
+        document.querySelectorAll('.faq').forEach(other => {
+          if (other !== faq) other.open = false;
+        });
+      }
+    });
+  });
+  document.querySelector('.menu-btn')?.addEventListener('click', () => {
+    const links = document.querySelector('.nav-links');
+    if (!links) return;
+    const open = links.style.display === 'flex';
+    Object.assign(links.style, open
+      ? {display:'none'}
+      : {display:'flex',position:'absolute',top:'72px',left:'0',right:'0',flexDirection:'column',background:'#fff',padding:'20px 28px',borderBottom:'1px solid var(--lc-border)',boxShadow:'0 12px 28px -16px rgba(10,37,64,.22)'});
+  });
+</script>
+
+</body>
+</html>

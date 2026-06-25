@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lesscarbon.com.au/sitemap.xml

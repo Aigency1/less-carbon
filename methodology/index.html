@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Methodology | How Less Carbon Calculates Emissions</title>
+<meta name="description" content="Every Less Carbon assessment follows the GHG Protocol method and current Australian NGA factors, with human review before issue. See exactly how your certificate is calculated.">
+<meta name="theme-color" content="#0A2540">
+<link rel="canonical" href="https://lesscarbon.com.au/methodology/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Our Methodology | How Less Carbon Calculates Emissions">
+<meta property="og:description" content="Every Less Carbon assessment follows the GHG Protocol method and current Australian NGA factors, with human review before issue.">
+<meta property="og:url" content="https://lesscarbon.com.au/methodology/">
+<meta property="og:locale" content="en_AU">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What standard does Less Carbon calculate against?","acceptedAnswer":{"@type":"Answer","text":"The GHG Protocol Corporate Standard method, applied with the Australian Government's current published National Greenhouse Accounts (NGA) factors, broken down by ANZSIC industry classification."}},
+    {"@type":"Question","name":"Is my certificate checked by a human?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every certificate is reviewed by our qualified team before issue, and you approve the draft before it is finalised."}},
+    {"@type":"Question","name":"Can a reporting entity use my certificate for Scope 3 reporting?","acceptedAnswer":{"@type":"Answer","text":"Yes. Your certificate is an independent assessment based on your source evidence, in a standardised format designed to be used as supplier-provided data in Scope 3 reporting."}},
+    {"@type":"Question","name":"Is the certificate a pass or fail?","acceptedAnswer":{"@type":"Answer","text":"No. There is no threshold and no grade. The certificate reports your Scope 1 and 2 emissions; it does not judge them."}},
+    {"@type":"Question","name":"What if I cannot find some of my documents?","acceptedAnswer":{"@type":"Answer","text":"We will ask you for the specific items first. Where data genuinely cannot be obtained, the framework permits documented industry-average figures in initial reporting periods, and any use of them is disclosed on your certificate."}},
+    {"@type":"Question","name":"How long is my certificate valid?","acceptedAnswer":{"@type":"Answer","text":"12 months from the date of issue."}},
+    {"@type":"Question","name":"Who can see my data?","acceptedAnswer":{"@type":"Answer","text":"You receive the full assessment and certificate. Third parties holding your certificate number can confirm only that it is current. Anything more requires your explicit approval, every time."}},
+    {"@type":"Question","name":"Does the assessment cover Scope 3?","acceptedAnswer":{"@type":"Answer","text":"Our launch service assesses Scope 1 and Scope 2, which is commonly what reporting entities ask suppliers to provide as supplier-specific emissions evidence. Scope 3 commentary and reduction pathways are on our roadmap."}}
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --lc-navy:#0A2540; --lc-navy-deep:#06182B; --lc-blue:#2563EB; --lc-text:#102133;
+    --lc-muted:#5B6B7A; --lc-light:#F5F8FC; --lc-border:#DCE5EF; --lc-white:#FFFFFF;
+    --lc-accent:#C6F26B; --radius:10px; --radius-lg:14px; --container:1240px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--lc-text);background:var(--lc-white);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--container);margin:0 auto;padding:0 28px}
+  a{color:var(--lc-blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+  h1,h2,h3{font-family:'Fraunces',serif;color:var(--lc-navy);letter-spacing:-0.015em;line-height:1.15}
+  .eyebrow{display:inline-block;font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lc-navy);background:var(--lc-accent);border-radius:6px;padding:6px 12px;margin-bottom:18px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;border-radius:8px;font-weight:600;font-size:15px;border:1px solid transparent;cursor:pointer;transition:transform .15s, background .2s}
+  .btn:hover{text-decoration:none;transform:translateY(-1px)}
+  .btn-primary{background:var(--lc-blue);color:#fff}
+  .btn-primary:hover{background:#1d4ed8}
+  .btn-ghost{border-color:var(--lc-border);color:var(--lc-navy);background:#fff}
+  .btn-lime{background:var(--lc-accent);color:var(--lc-navy)}
+  section{padding:72px 0}
+  .sec-head{max-width:760px;margin-bottom:40px}
+  .sec-head h2{font-size:clamp(28px,3.4vw,40px);margin-bottom:14px}
+  .sec-head p{color:var(--lc-muted);font-size:17px}
+
+  /* NAV (placeholder, matches site) */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--lc-border)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{display:flex;align-items:center;gap:10px;color:var(--lc-navy);font-family:'Fraunces',serif;font-weight:600;font-size:22px}
+  .logo-mark{width:34px;height:34px;border-radius:8px;background:var(--lc-navy);display:grid;place-items:center;color:var(--lc-accent);font-family:'Fraunces',serif;font-weight:600;font-size:18px}
+  .nav-links{display:flex;gap:28px}
+  .nav-links a{color:var(--lc-text);font-size:14px;font-weight:500}
+  /* nav one-line fix (Registry added) */
+  .nav .wrap{max-width:1320px;gap:16px}
+  .logo,.nav-links a,.nav .btn{white-space:nowrap}
+  .nav-links{gap:20px}
+
+  /* HERO */
+  .hero{background:linear-gradient(180deg,var(--lc-light) 0%,#fff 100%);padding:88px 0 64px}
+  .hero h1{font-size:clamp(34px,4.6vw,56px);max-width:820px;margin-bottom:22px}
+  .hero p.lede{font-size:19px;color:var(--lc-muted);max-width:720px;margin-bottom:32px}
+  .hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
+  .trustbar{margin-top:52px;border-top:1px solid var(--lc-border);padding-top:24px;display:flex;flex-wrap:wrap;gap:10px 28px}
+  .trustbar span{font-size:13.5px;font-weight:600;color:var(--lc-navy);display:flex;align-items:center;gap:8px}
+  .trustbar span::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--lc-accent)}
+
+  /* TAX ANALOGY */
+  .analogy{background:var(--lc-navy);color:#fff}
+  .analogy h2{color:#fff;font-size:clamp(28px,3.4vw,40px);max-width:680px;margin-bottom:20px}
+  .analogy h2 em{color:var(--lc-accent);font-style:normal}
+  .analogy p{color:#C9D6E4;max-width:740px;font-size:17px;margin-bottom:16px}
+  .analogy .punch{color:#fff;font-weight:600}
+
+  /* STANDARDS */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:#fff;border:1px solid var(--lc-border);border-radius:var(--radius-lg);padding:30px 28px}
+  .card .ic{width:44px;height:44px;border-radius:10px;background:var(--lc-accent);display:grid;place-items:center;font-size:20px;margin-bottom:18px}
+  .card h3{font-size:21px;margin-bottom:10px}
+  .card p{color:var(--lc-muted);font-size:15px}
+  .standards{background:var(--lc-light)}
+
+  /* PROCESS */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .step{border:1px solid var(--lc-border);border-radius:var(--radius);padding:24px 22px;background:#fff;position:relative}
+  .step .n{font-family:'Fraunces',serif;font-size:15px;font-weight:700;color:var(--lc-navy);background:var(--lc-accent);width:30px;height:30px;border-radius:50%;display:grid;place-items:center;margin-bottom:14px}
+  .step h3{font-size:17px;font-family:'Inter',sans-serif;font-weight:700;letter-spacing:0;margin-bottom:8px}
+  .step p{font-size:14px;color:var(--lc-muted)}
+
+  /* SPLIT (is/is not) */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .panel{border-radius:var(--radius-lg);padding:34px 32px}
+  .panel.is{background:var(--lc-navy);color:#fff}
+  .panel.is h3{color:var(--lc-accent)}
+  .panel.is p{color:#C9D6E4}
+  .panel.not{background:var(--lc-light);border:1px solid var(--lc-border)}
+  .panel.not p{color:var(--lc-muted)}
+  .panel h3{font-size:22px;margin-bottom:12px}
+  .panel p{font-size:15.5px;margin-bottom:12px}
+  .fineprint{margin-top:22px;max-width:860px;color:var(--lc-muted);font-size:15px}
+
+  /* TWO-COL FEATURE ROWS */
+  .rows{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .row-card{border:1px solid var(--lc-border);border-radius:var(--radius-lg);padding:30px 28px;background:#fff}
+  .row-card h3{font-size:20px;margin-bottom:10px}
+  .row-card p{font-size:15px;color:var(--lc-muted);margin-bottom:10px}
+  .row-card ul{margin:10px 0 0 18px}
+  .row-card li{font-size:15px;color:var(--lc-muted);margin-bottom:8px}
+  .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--lc-navy);background:var(--lc-accent);border-radius:4px;padding:3px 8px;margin-bottom:14px}
+
+  /* PERSONA BLOCKS */
+  .personas{background:var(--lc-light)}
+  .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .pcard{background:#fff;border:1px solid var(--lc-border);border-radius:var(--radius-lg);padding:36px 34px}
+  .pcard h3{font-size:24px;margin-bottom:14px}
+  .pcard p{color:var(--lc-muted);font-size:15.5px;margin-bottom:14px}
+  .pcard blockquote{border-left:3px solid var(--lc-accent);padding:12px 16px;background:var(--lc-light);border-radius:0 8px 8px 0;font-size:14.5px;color:var(--lc-text);font-style:italic;margin:14px 0 18px}
+
+  /* FAQ */
+  .faq{max-width:840px;margin:0 auto}
+  details{border:1px solid var(--lc-border);border-radius:var(--radius);background:#fff;margin-bottom:12px;overflow:hidden}
+  summary{cursor:pointer;padding:18px 22px;font-weight:600;font-size:16px;color:var(--lc-navy);list-style:none;display:flex;justify-content:space-between;align-items:center}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-family:'Fraunces',serif;font-size:22px;color:var(--lc-blue)}
+  details[open] summary::after{content:"–"}
+  details p{padding:0 22px 18px;color:var(--lc-muted);font-size:15px}
+
+  /* CTA */
+  .cta{background:var(--lc-navy-deep);color:#fff;text-align:center}
+  .cta h2{color:#fff;font-size:clamp(28px,3.6vw,42px);max-width:780px;margin:0 auto 18px}
+  .cta p{color:#C9D6E4;max-width:640px;margin:0 auto 30px;font-size:17px}
+  .cta .price{color:var(--lc-accent);font-weight:700}
+
+  footer{background:var(--lc-navy);color:#8FA3B8;font-size:13px;padding:34px 0;text-align:center}
+
+  @media(max-width:960px){
+    .cards,.steps{grid-template-columns:repeat(2,1fr)}
+    .split,.rows,.pgrid{grid-template-columns:1fr}
+  }
+  @media(max-width:600px){
+    .cards,.steps{grid-template-columns:1fr}
+    section{padding:52px 0}
+    .nav-links{display:none}
+  }
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://lesscarbon.com.au/"},{"@type":"ListItem","position":2,"name":"Methodology","item":"https://lesscarbon.com.au/methodology/"}]},{"@type":"Organization","name":"Less Carbon","url":"https://lesscarbon.com.au/","legalName":"Less Carbon Corporate Services Pty Ltd","areaServed":{"@type":"Country","name":"Australia"}}]}
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Less Carbon home"><span class="logo-mark">L</span><span>Less Carbon</span></a>
+    <div class="nav-links">
+      <a href="/sme">For SMEs</a>
+      <a href="/reporting-entities">For Reporting Entities</a>
+      <a href="/partners">Partners</a>
+      <a href="/methodology" style="color:var(--lc-blue)">Methodology</a>
+      <a href="/registry">Registry</a>
+      <a href="/pricing">Pricing</a>
+    </div>
+    <a class="btn btn-primary" href="#start">Start your assessment</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Methodology v1.0 · June 2026</span>
+    <h1>One method. Built on the GHG Protocol and Australian Government published factors. Reviewed by humans.</h1>
+    <p class="lede">Every Less Carbon assessment is calculated using the GHG Protocol method and the Australian Government's published National Greenhouse Accounts (NGA) factors. Standardised inputs, deterministic calculations, and qualified human review before anything is issued. This page explains exactly how it works and what you can rely on.</p>
+    <div class="ctas">
+      <a class="btn btn-primary" href="#start">Start your assessment</a>
+      <a class="btn btn-ghost" href="#faq">Questions? Talk to us</a>
+    </div>
+    <div class="trustbar">
+      <span>GHG Protocol method</span>
+      <span>Current published NGA factors</span>
+      <span>ANZSIC line-by-line detail</span>
+      <span>Human-reviewed before issue</span>
+      <span>Valid 12 months</span>
+    </div>
+  </div>
+</header>
+
+<!-- TAX ANALOGY -->
+<section class="analogy">
+  <div class="wrap">
+    <h2>Think of it like a <em>tax assessment</em>.</h2>
+    <p>A tax assessment is only as strong as the process behind it: real records from the business, a standardised government method, and an output that can be audited line by line. That is exactly how a Less Carbon assessment works.</p>
+    <p>We take your actual records, energy bills, fuel logs, fleet data, operational documents. Not estimates, not guesses. We apply the GHG Protocol method using the Australian Government's published NGA Factors. And we put the result in a standardised, auditable format that any reporting entity, accountant or auditor can read the same way, every time.</p>
+    <p class="punch">Where the same source data, assumptions and factor version are used, the same calculation rules produce the same result. The method is controlled, the factors are published, and any judgement or assumption is documented.</p>
+  </div>
+</section>
+
+<!-- STANDARDS -->
+<section class="standards">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>The standards behind every number</h2>
+      <p>There is no single mandated certification standard for supplier emissions in Australia. So we built our methodology on the two pillars the entire reporting system already relies on, then went one level deeper.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="ic">📐</div>
+        <h3>GHG Protocol Corporate Standard</h3>
+        <p>The international method for scoping and calculating Scope 1 and Scope 2 emissions. It is the framework the Australian reporting regime itself is built on.</p>
+      </div>
+      <div class="card">
+        <div class="ic">🇦🇺</div>
+        <h3>National Greenhouse Accounts factors</h3>
+        <p>The Australian Government's published emission factors for fuels, electricity and energy. Updates are applied through our calculation engine automatically, and the factor version used is recorded for traceability.</p>
+      </div>
+      <div class="card">
+        <div class="ic">🔬</div>
+        <h3>ANZSIC line-by-line depth</h3>
+        <p>Each assessment is mapped to the relevant ANZSIC industry classification and calculated line by line by emissions source, rather than produced as a single top-level estimate. That level of detail helps make the output easier to review, compare and support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>How your assessment is built</h2>
+      <p>A controlled workflow from first form to final certificate. Here is what it means for you.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Structured intake</h3><p>A structured online form captures your business profile, sites, fleet, fuels and operations. Nothing downstream has to guess what you meant.</p></div>
+      <div class="step"><div class="n">2</div><h3>Evidence upload</h3><p>You upload source documents (bills, logs, statements) into a controlled process that builds your evidence trail from day one.</p></div>
+      <div class="step"><div class="n">3</div><h3>AI classification &amp; extraction</h3><p>Our engine reads each document, classifies it and extracts the operating data into a standard working structure.</p></div>
+      <div class="step"><div class="n">4</div><h3>Deterministic calculation</h3><p>A rules engine normalises units and calculates your Scope 1 and 2 emissions using the GHG Protocol method and current NGA factors. Rules, not interpretation.</p></div>
+      <div class="step"><div class="n">5</div><h3>Quality gate</h3><p>Automated checks test whether inputs are sufficient and results consistent. Gaps are flagged and chased, never papered over.</p></div>
+      <div class="step"><div class="n">6</div><h3>Human review</h3><p>A qualified reviewer checks every assessment before anything leaves the building.</p></div>
+      <div class="step"><div class="n">7</div><h3>Your approval</h3><p>You receive the draft certificate and assessment for review before final issue.</p></div>
+      <div class="step"><div class="n">8</div><h3>Issue &amp; register</h3><p>Your Supplier Emissions Certificate and Carbon Assessment are issued, dated and valid for 12 months.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HUMAN REVIEW -->
+<section class="standards">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Human eyes on every certificate</h2>
+      <p>Automation does the heavy lifting. It does not get the final say.</p>
+    </div>
+    <div class="fineprint" style="margin-top:0;font-size:16.5px;color:var(--lc-text)">
+      <p style="margin-bottom:14px">Every certificate is reviewed by our qualified team before issue. Our reviewers hold formal training in emissions assessment and climate-related financial risk, with backgrounds in licensed and regulated industries and specialist coursework specific to the AASB S2 reporting framework.</p>
+      <p>As our benchmarking dataset grows, assessments that sit outside expected ranges for their industry and size will always be escalated to a manual review. But the standing rule today is simple: nothing is issued without human eyes on it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- IS / IS NOT -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>What your certificate is (and what it is not)</h2>
+      <p>Plain words matter here, so we will be precise.</p>
+    </div>
+    <div class="split">
+      <div class="panel is">
+        <h3>Your certificate IS</h3>
+        <p>An independent assessment of your Scope 1 and Scope 2 emissions, calculated by Less Carbon from your source evidence using the government framework, in a standardised, auditable format.</p>
+        <p>Any required party (reporting entity, auditor or regulator) can use it as supplier-provided data for their Scope 3 reporting.</p>
+      </div>
+      <div class="panel not">
+        <h3>Your certificate is NOT</h3>
+        <p>A pass or fail. There is no threshold to clear and no grade. The number is the number.</p>
+        <p>It reports your emissions; it does not judge them.</p>
+      </div>
+    </div>
+    <p class="fineprint">We do not describe our certificates as audited or formally assured, because that means something specific in financial reporting and we will not borrow language we have not earned. What we offer is something the market currently lacks: a standardised, evidence-based assessment that every party in the chain can read the same way.</p>
+  </div>
+</section>
+
+<!-- GAPS + VALIDITY + DATA -->
+<section class="standards">
+  <div class="wrap">
+    <div class="rows">
+      <div class="row-card">
+        <span class="tag">Data gaps</span>
+        <h3>When your data has gaps</h3>
+        <p>Real businesses have messy records. Our process is built for that. If the quality gate finds missing or inconsistent data, we ask you for it, specifically and clearly. If the data genuinely cannot be obtained, we either mark the line as unavailable or use a documented estimate only where the methodology permits it.</p>
+        <p><strong>Any estimate, proxy or industry-average input is disclosed on the certificate itself, flagged line by line.</strong> Nothing is filled in quietly. Your certificate states exactly what it is built on, which is precisely why it can be trusted.</p>
+      </div>
+      <div class="row-card">
+        <span class="tag">Validity</span>
+        <h3>Valid for 12 months. From your date, not the government's.</h3>
+        <p>Every certificate is dated and valid for 12 months from issue. Not pro-rated to a financial year, not tied to an arbitrary deadline. Your 12 months is your 12 months.</p>
+        <p>For reporting entities running supplier programs: suppliers can be scheduled through assessment in waves, and every one holds a certificate with full 12-month currency from their own issue date.</p>
+      </div>
+      <div class="row-card" style="grid-column:1 / -1">
+        <span class="tag">Data security &amp; consent</span>
+        <h3>Your data. Your call.</h3>
+        <p>You upload commercially sensitive documents to us, so the rules are strict and simple:</p>
+        <ul>
+          <li>Your full assessment and certificate go to you, and only you.</li>
+          <li>Anyone holding your certificate number or QR code can confirm it is current: issue date, validity and status. That is all they see.</li>
+          <li>If a reporting entity wants more detail, the request comes to you for approval first. One click to approve, one click to decline. Nothing is shared without your consent.</li>
+          <li>You set your sharing preferences at intake, and you can change them at any time.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONAS -->
+<section class="personas" style="background:#fff">
+  <div class="wrap">
+    <div class="pgrid">
+      <div class="pcard">
+        <span class="tag">For reporting entities</span>
+        <h3>Supplier data you can actually use</h3>
+        <p>When you put your supply chain through Less Carbon, every supplier follows the identical standardised process, so the data arrives consistent, comparable and audit-ready. You receive the individual assessments and certificates plus a supplier register: certificate numbers, status and currency across your whole program, in a format that drops into your Scope 3 workpapers.</p>
+        <p>And because there is no pass or fail, asking your suppliers to certify carries no relationship risk. You are asking them for a number, not a judgement.</p>
+        <a class="btn btn-primary" href="/reporting-entities/">Talk to us about supply chain programs</a>
+      </div>
+      <div class="pcard">
+        <span class="tag">For accountants &amp; advisors</span>
+        <h3>The 30-second version for your clients</h3>
+        <blockquote>"Less Carbon prepares standardised, evidence-based carbon assessments and supplier emissions certificates. They calculate Scope 1 and 2 using the GHG Protocol method and the government's published NGA factors, a qualified reviewer checks every certificate before issue, and any estimated data is disclosed on the certificate itself. It works like a tax assessment: real records in, standard method applied, auditable output."</blockquote>
+        <p>That paragraph is yours to use. Partners receive plain-English talking points and ready-to-send client templates in the partner pack.</p>
+        <a class="btn btn-lime" href="/partners/">Become a partner</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="standards" id="faq">
+  <div class="wrap">
+    <div class="sec-head" style="margin-left:auto;margin-right:auto;text-align:center;max-width:640px">
+      <h2>Methodology questions, answered</h2>
+    </div>
+    <div class="faq">
+      <details><summary>What standard does Less Carbon calculate against?</summary><p>The GHG Protocol Corporate Standard method, applied with the Australian Government's current published National Greenhouse Accounts (NGA) factors, broken down by ANZSIC industry classification.</p></details>
+      <details><summary>Is my certificate checked by a human?</summary><p>Yes. Every certificate is reviewed by our qualified team before issue, and you approve the draft before it is finalised.</p></details>
+      <details><summary>Can a reporting entity use my certificate for Scope 3 reporting?</summary><p>Yes. Your certificate is an independent assessment based on your source evidence, in a standardised format designed to be used as supplier-provided data in Scope 3 reporting.</p></details>
+      <details><summary>Is the certificate a pass or fail?</summary><p>No. There is no threshold and no grade. The certificate reports your Scope 1 and 2 emissions; it does not judge them.</p></details>
+      <details><summary>What if I cannot find some of my documents?</summary><p>We will ask you for the specific items first. Where data genuinely cannot be obtained, the framework permits documented industry-average figures in initial reporting periods, and any use of them is disclosed on your certificate.</p></details>
+      <details><summary>How long is my certificate valid?</summary><p>12 months from the date of issue.</p></details>
+      <details><summary>Who can see my data?</summary><p>You receive the full assessment and certificate. Third parties holding your certificate number can confirm only that it is current. Anything more requires your explicit approval, every time.</p></details>
+      <details><summary>Does the assessment cover Scope 3?</summary><p>Our launch service assesses Scope 1 and Scope 2, which is commonly what reporting entities ask suppliers to provide as supplier-specific emissions evidence. Scope 3 commentary and reduction pathways are on our roadmap. New to the terminology? Read our <a href="/aasb-s2-compliance-guide/">plain-English AASB S2 guide</a>.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="start">
+  <div class="wrap">
+    <h2>Mandatory climate reporting is already in motion. Your customers need your number.</h2>
+    <p>From 1 January 2025, Australia's largest companies progressively entered mandatory climate reporting, and they need emissions data from their suppliers to comply. A Less Carbon assessment gets you a defensible, standardised answer, <span class="price">from $995</span>, in days not months.</p>
+    <a class="btn btn-lime" href="/sme/#start">Start your assessment</a>
+  </div>
+</section>
+
+<!-- GATED FULL PACK (Pastel #16: capture details before the full methodology/sample) -->
+<section class="standards" id="get-pack">
+  <div class="wrap">
+    <div class="sec-head" style="margin:0 auto 22px;text-align:center;max-width:680px">
+      <h2>Want the detail before you commit?</h2>
+      <p>This page is the overview. For the full methodology pack and a sample Supplier Emissions Certificate, leave your email and we&rsquo;ll send them straight over.</p>
+    </div>
+    <form onsubmit="return false" style="max-width:540px;margin:0 auto;display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+      <input type="email" required placeholder="you@yourbusiness.com.au" aria-label="Email address" style="flex:1;min-width:240px;padding:14px 16px;border:1px solid var(--lc-border);border-radius:8px;font:inherit">
+      <button class="btn btn-primary" type="submit">Send me the full pack</button>
+    </form>
+    <p style="text-align:center;color:var(--lc-muted);font-size:13px;margin-top:12px">No spam. Just the methodology pack and a sample certificate.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Less Carbon · Methodology v1.0, June 2026 · <a href="/aasb-s2-compliance-guide/" style="color:#C9D6E4">AASB S2 Compliance Guide</a></div>
+</footer>
+
+</body>
+</html>
