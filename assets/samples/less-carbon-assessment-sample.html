@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Less Carbon - Sample Carbon Assessment</title>
+<style>
+  :root{
+    --navy:#0b1f2a;
+    --navy2:#123040;
+    --lime:#c8ff4d;
+    --green:#2e7d5b;
+    --mist:#f3f7f2;
+    --line:#dfe6df;
+    --ink:#16202a;
+    --muted:#66737c;
+    --soft:#edf2ed;
+  }
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:#d9ded9; color:var(--ink); font-family: Arial, Helvetica, sans-serif; }
+  .page { width:210mm; height:297mm; margin:0 auto; background:#fff; position:relative; overflow:hidden; page-break-after:always; }
+  .page:last-child { page-break-after:auto; }
+  .stripe { position:absolute; left:0; top:0; bottom:0; width:15mm; background:var(--navy); }
+  .stripe:after { content:""; position:absolute; top:0; right:0; width:3mm; height:100%; background:var(--lime); }
+  .content { position:absolute; left:27mm; right:20mm; top:22mm; bottom:17mm; }
+  .header { position:absolute; top:15mm; left:27mm; right:20mm; height:12mm; display:flex; justify-content:space-between; align-items:center; }
+  .brand { letter-spacing:.17em; font-weight:800; font-size:13px; color:var(--navy); }
+  .brand .mark { display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--lime); margin-right:8px; vertical-align:1px; box-shadow:9px 0 0 var(--green); }
+  .doclabel { font-size:10px; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); font-weight:700; }
+  .footer { position:absolute; left:27mm; right:20mm; bottom:9mm; display:flex; justify-content:space-between; color:#758088; font-size:9px; border-top:1px solid var(--line); padding-top:4mm; }
+  h1 { font-size:42px; line-height:1.02; letter-spacing:-.03em; margin:0 0 8mm; color:var(--navy); }
+  h2 { font-size:24px; margin:0 0 6mm; letter-spacing:-.02em; color:var(--navy); }
+  h3 { font-size:13px; margin:0 0 3mm; color:var(--navy); text-transform:uppercase; letter-spacing:.08em; }
+  p { font-size:12.4px; line-height:1.45; margin:0 0 4mm; color:#24313a; }
+  .small { font-size:10.5px; color:var(--muted); line-height:1.4; }
+  .xsmall { font-size:9px; color:var(--muted); line-height:1.35; }
+  .badge { display:inline-block; border:1px solid rgba(200,255,77,.65); background:rgba(200,255,77,.15); color:#ebffaf; padding:7px 11px; border-radius:999px; font-size:10px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+  .sample-pill { display:inline-block; background:#eef6dd; border:1px solid #d7e7b2; color:#496124; padding:7px 10px; border-radius:999px; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; }
+  .cover { background:var(--navy); color:#fff; }
+  .cover .stripe { background:#07161f; }
+  .cover .content { left:26mm; right:18mm; top:25mm; bottom:18mm; }
+  .cover .brand, .cover .doclabel { color:#fff; }
+  .cover h1 { color:#fff; font-size:50px; max-width:135mm; margin-top:22mm; }
+  .cover h1 .accent { color:var(--lime); }
+  .cover p { color:#d8e5dd; max-width:140mm; }
+  .cover .footer { border-color:rgba(255,255,255,.18); color:#b5c2bd; }
+  .cover-card { position:absolute; left:26mm; right:18mm; bottom:35mm; background:#fff; border-radius:18px; padding:9mm 9mm 7mm; box-shadow:0 22px 48px rgba(0,0,0,.25); color:var(--ink); }
+  .cover-card .grid { display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:8mm; }
+  .meta-label { font-size:8.5px; color:var(--muted); font-weight:800; text-transform:uppercase; letter-spacing:.11em; margin-bottom:2mm; }
+  .meta-value { font-size:13px; font-weight:700; color:var(--navy); line-height:1.25; }
+  .watermark { position:absolute; right:-17mm; top:74mm; transform:rotate(-10deg); font-size:70px; line-height:1; font-weight:900; color:rgba(200,255,77,.12); letter-spacing:.08em; text-transform:uppercase; }
+  .hero-line { width:34mm; height:3px; background:var(--lime); margin:8mm 0 5mm; }
+  .note-box { background:var(--mist); border:1px solid var(--line); border-radius:14px; padding:6mm; margin-bottom:6mm; }
+  .dark-box { background:var(--navy); color:#fff; border-radius:14px; padding:6mm; }
+  .dark-box p, .dark-box .small { color:#dbe6df; }
+  .dark-box h3 { color:#fff; }
+  .metric-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:5mm; margin:6mm 0; }
+  .metric { border:1px solid var(--line); border-radius:15px; padding:5mm; min-height:31mm; background:#fff; }
+  .metric .num { font-size:28px; font-weight:900; color:var(--navy); letter-spacing:-.04em; margin-bottom:1mm; }
+  .metric .unit { font-size:10px; color:var(--muted); font-weight:700; }
+  .metric .name { font-size:10px; text-transform:uppercase; letter-spacing:.11em; color:var(--muted); font-weight:800; margin-bottom:3mm; }
+  .metric.primary { background:var(--navy); color:#fff; border-color:var(--navy); }
+  .metric.primary .num { color:var(--lime); }
+  .metric.primary .unit, .metric.primary .name { color:#d8e5dd; }
+  .two-col { display:grid; grid-template-columns: 1fr 1fr; gap:7mm; }
+  .two-col-40 { display:grid; grid-template-columns: .9fr 1.1fr; gap:7mm; }
+  .table { width:100%; border-collapse:separate; border-spacing:0; font-size:11px; margin:0 0 5mm; border:1px solid var(--line); border-radius:12px; overflow:hidden; }
+  .table th { background:var(--navy); color:#fff; font-size:9px; text-transform:uppercase; letter-spacing:.09em; text-align:left; padding:10px 12px; }
+  .table td { border-top:1px solid var(--line); padding:9px 12px; vertical-align:top; }
+  .table tr:nth-child(even) td { background:#fafcf8; }
+  .right { text-align:right !important; }
+  .status { display:inline-block; border-radius:999px; padding:5px 8px; font-size:9px; text-transform:uppercase; letter-spacing:.09em; font-weight:800; background:#ecf7e8; color:#2e7d5b; border:1px solid #cce8c7; }
+  .list { margin:0; padding-left:0; list-style:none; }
+  .list li { font-size:11.5px; line-height:1.38; margin:0 0 3.2mm; padding-left:6mm; position:relative; }
+  .list li:before { content:""; position:absolute; left:0; top:4px; width:3mm; height:3mm; border-radius:50%; background:var(--lime); border:1px solid #a4d83a; }
+  .source-card { border:1px solid var(--line); border-radius:14px; padding:4.5mm; background:#fff; min-height:28mm; }
+  .source-card strong { display:block; color:var(--navy); font-size:12px; margin-bottom:2mm; }
+  .source-card span { display:block; font-size:10.5px; line-height:1.35; color:var(--muted); }
+  .cards4 { display:grid; grid-template-columns:repeat(4, 1fr); gap:4mm; margin:4mm 0 7mm; }
+  .bar-wrap { border:1px solid var(--line); border-radius:15px; padding:5mm; background:#fff; margin-top:3mm; }
+  .bar-row { display:grid; grid-template-columns:34mm 1fr 18mm; gap:4mm; align-items:center; margin:0 0 4mm; }
+  .bar-row:last-child { margin-bottom:0; }
+  .bar-label { font-size:10.5px; color:#34434d; font-weight:700; }
+  .bar-track { height:8mm; border-radius:999px; background:#edf2ed; overflow:hidden; }
+  .bar { height:100%; background:linear-gradient(90deg,var(--green),var(--lime)); border-radius:999px; }
+  .bar-val { font-size:10px; color:var(--muted); text-align:right; font-weight:700; }
+  .callout { border-left:5px solid var(--lime); background:#f7faee; padding:4mm 5mm; border-radius:0 12px 12px 0; margin:5mm 0; }
+  .section-tag { font-size:9px; font-weight:900; letter-spacing:.12em; color:var(--green); text-transform:uppercase; margin-bottom:3mm; }
+  .mini-grid { display:grid; grid-template-columns:1fr 1fr; gap:4mm; }
+  .mini { border:1px solid var(--line); border-radius:12px; padding:4mm; min-height:24mm; }
+  .mini .k { font-size:9px; letter-spacing:.09em; text-transform:uppercase; color:var(--muted); font-weight:800; margin-bottom:1.5mm; }
+  .mini .v { font-size:12px; color:var(--navy); font-weight:700; line-height:1.25; }
+  .page-number { font-weight:700; color:var(--navy); }
+  .cover .page-number { color:#fff; }
+  .toc-row { display:grid; grid-template-columns: 1fr 12mm; border-bottom:1px solid var(--line); padding:4mm 0; font-size:12px; }
+  .toc-row span:last-child { text-align:right; color:var(--muted); }
+  .muted-panel { background:#f7f9f5; border:1px dashed #cbd8c9; border-radius:14px; padding:5mm; }
+  .registry { display:grid; grid-template-columns:1fr 1fr; gap:5mm; margin-top:5mm; }
+  .qr { width:25mm; height:25mm; border:2px solid var(--navy); background:linear-gradient(45deg,#fff 25%,#0b1f2a 25%,#0b1f2a 35%,#fff 35%,#fff 60%,#0b1f2a 60%,#0b1f2a 70%,#fff 70%); border-radius:5px; opacity:.9; }
+  .registry-card { display:flex; gap:5mm; align-items:center; border:1px solid var(--line); border-radius:14px; padding:5mm; background:#fff; }
+  .hr { height:1px; background:var(--line); margin:5mm 0; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<section class="page cover">
+  <div class="stripe"></div>
+  <div class="watermark">Sample</div>
+  <div class="header">
+    <div class="brand"><span class="mark"></span>LESS CARBON</div>
+    <div class="doclabel">Carbon Assessment</div>
+  </div>
+  <div class="content">
+    <span class="badge">Website preview / illustrative only</span>
+    <h1>Carbon Assessment<span class="accent">.</span></h1>
+    <div class="hero-line"></div>
+    <p>Prepared for supplier-side emissions reporting, tender responses, customer requests and AASB S2-related supply chain data requests.</p>
+  </div>
+  <div class="cover-card">
+    <div class="grid">
+      <div>
+        <div class="meta-label">Prepared for</div>
+        <div class="meta-value">Sample Manufacturing Pty Ltd</div>
+      </div>
+      <div>
+        <div class="meta-label">Reporting period</div>
+        <div class="meta-value">1 Jul 2025 - 30 Jun 2026</div>
+      </div>
+      <div>
+        <div class="meta-label">Reference</div>
+        <div class="meta-value">LC-A-SAMPLE-001</div>
+      </div>
+    </div>
+    <div class="hr"></div>
+    <p class="small" style="margin-bottom:0;">This is a shortened public-facing sample. Final client reports include client-specific data coverage, assumptions, calculation notes and supporting schedules that are not reproduced in this website preview.</p>
+  </div>
+  <div class="footer"><span>Prepared by Less Carbon</span><span class="page-number">01</span></div>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page">
+  <div class="stripe"></div>
+  <div class="header">
+    <div class="brand"><span class="mark"></span>LESS CARBON</div>
+    <div class="doclabel">Executive Snapshot</div>
+  </div>
+  <div class="content" style="top:34mm;">
+    <div class="section-tag">Executive Summary</div>
+    <h2>Assessed emissions summary</h2>
+    <p>This sample assessment shows how Less Carbon presents a supplier's Scope 1 and Scope 2 emissions position in a clear, standardised format. It is designed to support practical responses to customer, tender, lender and reporting entity requests.</p>
+    <div class="metric-grid">
+      <div class="metric primary">
+        <div class="name">Total assessed emissions</div>
+        <div class="num">86.4</div>
+        <div class="unit">tCO2-e</div>
+      </div>
+      <div class="metric">
+        <div class="name">Scope 1</div>
+        <div class="num">31.8</div>
+        <div class="unit">tCO2-e</div>
+      </div>
+      <div class="metric">
+        <div class="name">Scope 2</div>
+        <div class="num">54.6</div>
+        <div class="unit">tCO2-e</div>
+      </div>
+    </div>
+    <div class="two-col">
+      <div class="note-box">
+        <h3>Main assessed sources</h3>
+        <ul class="list">
+          <li>Purchased electricity was the largest assessed source.</li>
+          <li>Mobile fuel use was the largest Scope 1 contributor.</li>
+          <li>No material refrigerant loss was disclosed for this sample period.</li>
+        </ul>
+      </div>
+      <div class="dark-box">
+        <h3>What this report is for</h3>
+        <p>This assessment gives a customer or reporting entity a consistent supplier emissions profile for the period stated.</p>
+        <p class="small" style="margin-bottom:0;">It is not a statutory audit, full assurance engagement, product LCA or Scope 3 inventory unless expressly stated in the final report.</p>
+      </div>
+    </div>
+    <div class="callout">
+      <p style="margin-bottom:0;"><strong>Website sample note:</strong> The final issued report contains more detail than this preview, including source-by-source assumptions, data coverage and calculation notes. Those working sections are intentionally abbreviated here.</p>
+    </div>
+  </div>
+  <div class="footer"><span>Sample Carbon Assessment - LC-A-SAMPLE-001</span><span class="page-number">02</span></div>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page">
+  <div class="stripe"></div>
+  <div class="header">
+    <div class="brand"><span class="mark"></span>LESS CARBON</div>
+    <div class="doclabel">Scope + Boundary</div>
+  </div>
+  <div class="content" style="top:34mm;">
+    <div class="section-tag">Assessment Scope</div>
+    <h2>Boundary of the assessment</h2>
+    <p>The assessment covers the entity, sites and activity data made available through the Less Carbon intake and document submission process.</p>
+    <div class="two-col-40">
+      <div>
+        <table class="table">
+          <tr><th>Item</th><th>Sample detail</th></tr>
+          <tr><td>Entity assessed</td><td>Sample Manufacturing Pty Ltd</td></tr>
+          <tr><td>ABN</td><td>00 000 000 000 <span class="xsmall">(sample)</span></td></tr>
+          <tr><td>Sites included</td><td>3 operating sites</td></tr>
+          <tr><td>Scope covered</td><td>Scope 1 and Scope 2 emissions only</td></tr>
+          <tr><td>Exclusions</td><td>Scope 3 emissions and product-level lifecycle impacts</td></tr>
+        </table>
+      </div>
+      <div class="muted-panel">
+        <h3>Boundary statement</h3>
+        <p class="small">The final client report identifies the reporting period, operational boundary, included sites, relevant exclusions and any data coverage limitations.</p>
+        <p class="small" style="margin-bottom:0;">For this public sample, detailed site-by-site and activity-level schedules have been withheld.</p>
+      </div>
+    </div>
+    <h3 style="margin-top:7mm;">Typical data sources reviewed</h3>
+    <div class="cards4">
+      <div class="source-card"><strong>Electricity records</strong><span>Bills, usage data and NMI-level records where available.</span></div>
+      <div class="source-card"><strong>Fuel records</strong><span>Fuel cards, invoices and fleet-related consumption records.</span></div>
+      <div class="source-card"><strong>Site register</strong><span>Locations, site types and operational boundary information.</span></div>
+      <div class="source-card"><strong>HVAC records</strong><span>Refrigerant service, top-up or loss records where relevant.</span></div>
+    </div>
+    <table class="table">
+      <tr><th>Coverage area</th><th>Status shown in final report</th><th>Sample treatment</th></tr>
+      <tr><td>Electricity</td><td><span class="status">Reviewed</span></td><td>Aggregated only in this preview.</td></tr>
+      <tr><td>Mobile fuel</td><td><span class="status">Reviewed</span></td><td>Summarised at category level.</td></tr>
+      <tr><td>Refrigerants</td><td><span class="status">Checked</span></td><td>No detailed service records reproduced.</td></tr>
+    </table>
+  </div>
+  <div class="footer"><span>Scope 1 + Scope 2 supplier-side assessment</span><span class="page-number">03</span></div>
+</section>
+
+<!-- PAGE 4 -->
+<section class="page">
+  <div class="stripe"></div>
+  <div class="header">
+    <div class="brand"><span class="mark"></span>LESS CARBON</div>
+    <div class="doclabel">Emissions Profile</div>
+  </div>
+  <div class="content" style="top:34mm;">
+    <div class="section-tag">Emissions Summary</div>
+    <h2>Summary by scope and source</h2>
+    <div class="two-col">
+      <div>
+        <table class="table">
+          <tr><th>Emissions category</th><th class="right">tCO2-e</th></tr>
+          <tr><td>Scope 1 emissions</td><td class="right">31.8</td></tr>
+          <tr><td>Scope 2 emissions</td><td class="right">54.6</td></tr>
+          <tr><td><strong>Total assessed emissions</strong></td><td class="right"><strong>86.4</strong></td></tr>
+        </table>
+        <div class="bar-wrap">
+          <div class="bar-row"><div class="bar-label">Scope 1</div><div class="bar-track"><div class="bar" style="width:37%;"></div></div><div class="bar-val">37%</div></div>
+          <div class="bar-row"><div class="bar-label">Scope 2</div><div class="bar-track"><div class="bar" style="width:63%;"></div></div><div class="bar-val">63%</div></div>
+        </div>
+      </div>
+      <div>
+        <table class="table">
+          <tr><th>Source category</th><th class="right">Sample share</th></tr>
+          <tr><td>Purchased electricity</td><td class="right">63%</td></tr>
+          <tr><td>Mobile fuel combustion</td><td class="right">27%</td></tr>
+          <tr><td>Stationary fuel combustion</td><td class="right">10%</td></tr>
+          <tr><td>Fugitive emissions</td><td class="right">0%</td></tr>
+        </table>
+        <div class="bar-wrap">
+          <div class="bar-row"><div class="bar-label">Electricity</div><div class="bar-track"><div class="bar" style="width:63%;"></div></div><div class="bar-val">54.6</div></div>
+          <div class="bar-row"><div class="bar-label">Mobile fuel</div><div class="bar-track"><div class="bar" style="width:27%;"></div></div><div class="bar-val">23.4</div></div>
+          <div class="bar-row"><div class="bar-label">Gas/fuel</div><div class="bar-track"><div class="bar" style="width:10%;"></div></div><div class="bar-val">8.4</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:8mm;">
+      <p style="margin-bottom:0;">The full issued report includes category-level notes explaining how each source was treated, what records were used and whether any activity data was incomplete, excluded or normalised.</p>
+    </div>
+    <div class="two-col" style="margin-top:5mm;">
+      <div class="note-box">
+        <h3>Key source observations</h3>
+        <ul class="list">
+          <li>Purchased electricity represented the largest assessed source for the reporting period.</li>
+          <li>Mobile fuel was a material Scope 1 contributor based on submitted fuel records.</li>
+          <li>Results apply only to the period and boundary stated in this report.</li>
+        </ul>
+      </div>
+      <div class="note-box">
+        <h3>How customers can use it</h3>
+        <p class="small" style="margin-bottom:0;">The output is intended to give customers and reporting entities a consistent supplier emissions profile without requiring the supplier to build a full carbon reporting function internally.</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer"><span>Indicative figures only - no live certificate or register entry</span><span class="page-number">04</span></div>
+</section>
+
+<!-- PAGE 5 -->
+<section class="page">
+  <div class="stripe"></div>
+  <div class="header">
+    <div class="brand"><span class="mark"></span>LESS CARBON</div>
+    <div class="doclabel">Methodology Basis</div>
+  </div>
+  <div class="content" style="top:34mm;">
+    <div class="section-tag">Methodology Basis</div>
+    <h2>Clear basis, without exposing the working engine</h2>
+    <p>This assessment has been prepared using client-submitted activity data and supporting records. Greenhouse gas emissions are assessed on a Scope 1 and Scope 2 basis with reference to the GHG Protocol Corporate Standard and applicable Australian emissions factors and guidance relevant to AASB S2-related reporting.</p>
+    <div class="two-col">
+      <div class="note-box">
+        <h3>Included in the final report</h3>
+        <ul class="list">
+          <li>Reporting period, entity and operational boundary.</li>
+          <li>Source category emissions summary.</li>
+          <li>Data coverage, assumptions and limitations.</li>
+          <li>Report reference and related certificate details.</li>
+        </ul>
+      </div>
+      <div class="note-box">
+        <h3>Not shown in this public sample</h3>
+        <ul class="list">
+          <li>Detailed calculation records and factor-by-factor workings.</li>
+          <li>Client documents, invoices and source files.</li>
+          <li>Site-by-site activity schedules.</li>
+          <li>Commercial or confidential supplier information.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="dark-box" style="margin-top:6mm;">
+      <h3>Important report limitation</h3>
+      <p>This document does not constitute financial audit, statutory assurance or independent verification unless expressly stated otherwise. Results are based on the information and supporting records made available by the client for the reporting period.</p>
+      <p class="small" style="margin-bottom:0;">Where records are incomplete, unavailable or only partly available, the final report notes the relevant assumption, exclusion or limitation.</p>
+    </div>
+    <h3 style="margin-top:7mm;">Source treatment overview</h3>
+    <table class="table">
+      <tr><th>Source area</th><th>Sample description</th></tr>
+      <tr><td>Stationary fuel</td><td>Assessed where fuel consumption records are provided for included sites and activities.</td></tr>
+      <tr><td>Mobile fuel</td><td>Assessed using fuel cards, invoices or operational fleet records submitted for the period.</td></tr>
+      <tr><td>Purchased electricity</td><td>Assessed using electricity consumption records for included sites and the stated reporting period.</td></tr>
+      <tr><td>Fugitive emissions</td><td>Assessed where refrigerant servicing, top-up or loss records are available.</td></tr>
+    </table>
+  </div>
+  <div class="footer"><span>Methodology abbreviated for website sample</span><span class="page-number">05</span></div>
+</section>
+
+<!-- PAGE 6 -->
+<section class="page">
+  <div class="stripe"></div>
+  <div class="header">
+    <div class="brand"><span class="mark"></span>LESS CARBON</div>
+    <div class="doclabel">Output + Register</div>
+  </div>
+  <div class="content" style="top:34mm;">
+    <div class="section-tag">Final Output</div>
+    <h2>What the client receives</h2>
+    <p>The issued Less Carbon package includes the assessment report and related Supplier Emissions Certificate. The certificate can be checked through the Less Carbon registry using the certificate number or QR code.</p>
+    <div class="mini-grid">
+      <div class="mini"><div class="k">Report</div><div class="v">Carbon Assessment for the stated period and boundary</div></div>
+      <div class="mini"><div class="k">Certificate</div><div class="v">Supplier Emissions Certificate with unique reference</div></div>
+      <div class="mini"><div class="k">Register</div><div class="v">Public verification of certificate status and core details</div></div>
+      <div class="mini"><div class="k">Renewal</div><div class="v">12-month certificate cycle and renewal reminder</div></div>
+    </div>
+    <div class="registry">
+      <div class="registry-card">
+        <div class="qr"></div>
+        <div>
+          <h3>QR / registry check</h3>
+          <p class="small" style="margin-bottom:0;">This sample QR visual is illustrative only. A final certificate links to a registry status page for verification.</p>
+        </div>
+      </div>
+      <div class="registry-card">
+        <div>
+          <div class="meta-label">Certificate status</div>
+          <div class="meta-value"><span class="status">Sample only</span></div>
+          <p class="small" style="margin-top:3mm;margin-bottom:0;">No live certificate, supplier record or registry entry is created by this sample.</p>
+        </div>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:7mm;">
+      <p style="margin-bottom:0;"><strong>Customer-facing disclosure:</strong> Public registry results are deliberately limited. Further disclosure of supplier information is controlled through the supplier and the relevant engagement terms.</p>
+    </div>
+    <div class="muted-panel" style="margin-top:6mm;">
+      <h3>Final report appendices</h3>
+      <p class="small">The full report may include a site register, activity data coverage summary and business profile. These appendices are represented only at a high level in this public sample.</p>
+    </div>
+  </div>
+  <div class="footer"><span>Prepared by Less Carbon - website sample</span><span class="page-number">06</span></div>
+</section>
+
+</body>
+</html>
