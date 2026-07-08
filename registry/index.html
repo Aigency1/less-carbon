@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certificate Register | Verify a Supplier Emissions Certificate | Less Carbon</title>
+<meta name="description" content="The Less Carbon Certificate Register lets reporting entities, procurement teams and auditors confirm any Supplier Emissions Certificate is current, genuine and issued by Less Carbon.">
+<meta name="theme-color" content="#0A2540">
+<link rel="canonical" href="https://lesscarbon.com.au/registry/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Certificate Register | Verify a Supplier Emissions Certificate | Less Carbon">
+<meta property="og:description" content="Confirm any Supplier Emissions Certificate is current, genuine and issued by Less Carbon. Check by certificate number, ABN or QR code.">
+<meta property="og:url" content="https://lesscarbon.com.au/registry/">
+<meta property="og:locale" content="en_AU">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What does a verified certificate confirm?","acceptedAnswer":{"@type":"Answer","text":"The register confirms certificate status (Valid, Expired, Replaced or Revoked), issue date and expiry date, supplier name, and scope coverage (Scope 1 + Scope 2 and the financial year assessed). It does not display emissions tonnage; that detail stays with the certificate holder."}},
+    {"@type":"Question","name":"How do I verify a Supplier Emissions Certificate?","acceptedAnswer":{"@type":"Answer","text":"Check by certificate number, search by supplier ABN, or scan the QR code on a Less Carbon certificate. While certificate volumes build, verification is completed by our team: send your request and we confirm status within one business day."}},
+    {"@type":"Question","name":"How long is a certificate valid?","acceptedAnswer":{"@type":"Answer","text":"12 months from its date of issue. A certificate reports emissions for the financial year assessed and remains current for 12 months from issue, so a certificate covering FY2025-26 data issued in May 2026 stays valid until May 2027."}},
+    {"@type":"Question","name":"What if a supplier isn't on the register?","acceptedAnswer":{"@type":"Answer","text":"It means Less Carbon has not issued them a current Supplier Emissions Certificate. Reporting entities can scope a supplier program to have suppliers assessed, and suppliers can start their own assessment online, from $995 + GST."}}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://lesscarbon.com.au/"},{"@type":"ListItem","position":2,"name":"Certificate Register","item":"https://lesscarbon.com.au/registry/"}]},{"@type":"Organization","name":"Less Carbon","url":"https://lesscarbon.com.au/","legalName":"Less Carbon Corporate Services Pty Ltd","areaServed":{"@type":"Country","name":"Australia"}}]}
+</script>
+
+<style>
+  :root{
+    --lc-navy:#0A2540; --lc-navy-deep:#06182B; --lc-blue:#2563EB; --lc-text:#102133;
+    --lc-muted:#5B6B7A; --lc-light:#F5F8FC; --lc-border:#DCE5EF; --lc-white:#FFFFFF;
+    --lc-accent:#C6F26B; --lc-green:#1B7A3D; --radius:10px; --radius-lg:14px; --container:1240px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--lc-text);background:var(--lc-white);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--container);margin:0 auto;padding:0 28px}
+  a{color:var(--lc-blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+  h1,h2,h3{font-family:'Fraunces',serif;color:var(--lc-navy);letter-spacing:-0.015em;line-height:1.15}
+  .eyebrow{display:inline-block;font-family:'Inter',sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lc-navy);background:var(--lc-accent);border-radius:6px;padding:6px 12px;margin-bottom:18px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;border-radius:8px;font-weight:600;font-size:15px;border:1px solid transparent;cursor:pointer;transition:transform .15s, background .2s;font-family:inherit}
+  .btn:hover{text-decoration:none;transform:translateY(-1px)}
+  .btn-primary{background:var(--lc-blue);color:#fff}
+  .btn-primary:hover{background:#1d4ed8}
+  .btn-ghost{border-color:var(--lc-border);color:var(--lc-navy);background:#fff}
+  .btn-lime{background:var(--lc-accent);color:var(--lc-navy)}
+  .btn-navy{background:var(--lc-navy);color:#fff}
+  .btn-navy:hover{background:var(--lc-navy-deep)}
+  section{padding:72px 0}
+  .sec-head{max-width:760px;margin-bottom:40px}
+  .sec-head h2{font-size:clamp(28px,3.4vw,40px);margin-bottom:14px}
+  .sec-head p{color:var(--lc-muted);font-size:17px}
+
+  /* NAV */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--lc-border)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1320px;gap:16px}
+  .logo{display:flex;align-items:center;gap:10px;color:var(--lc-navy);font-family:'Fraunces',serif;font-weight:600;font-size:22px}
+  .logo-mark{width:34px;height:34px;border-radius:8px;background:var(--lc-navy);display:grid;place-items:center;color:var(--lc-accent);font-family:'Fraunces',serif;font-weight:600;font-size:18px}
+  .nav-links{display:flex;gap:20px}
+  .nav-links a{color:var(--lc-text);font-size:14px;font-weight:500;white-space:nowrap}
+  .logo,.nav .btn{white-space:nowrap}
+
+  /* HERO */
+  .hero{background:linear-gradient(180deg,var(--lc-light) 0%,#fff 100%);padding:72px 0 48px}
+  .hero h1{font-size:clamp(32px,4.4vw,52px);max-width:820px;margin-bottom:20px}
+  .hero p.lede{font-size:18px;color:var(--lc-muted);max-width:700px}
+
+  /* VERIFY LAYOUT */
+  .verify-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:26px;align-items:start}
+  .vcard{background:#fff;border:1px solid var(--lc-border);border-radius:var(--radius-lg);padding:36px 34px;box-shadow:0 10px 30px rgba(10,37,64,.05)}
+  .support{display:flex;gap:14px;background:var(--lc-light);border:1px solid var(--lc-border);border-radius:var(--radius);padding:18px 20px;margin-bottom:30px}
+  .support .ic{width:26px;height:26px;border-radius:50%;background:var(--lc-navy);color:var(--lc-accent);display:grid;place-items:center;font-weight:800;font-size:14px;font-family:'Fraunces',serif;flex:0 0 26px;margin-top:2px}
+  .support h3{font-family:'Inter',sans-serif;font-size:15px;letter-spacing:0;margin-bottom:4px}
+  .support p{font-size:14px;color:var(--lc-muted)}
+  .vcard h2{font-size:clamp(24px,2.8vw,32px);margin-bottom:8px}
+  .vcard > p.sub{color:var(--lc-muted);font-size:15px;margin-bottom:26px}
+  .methods{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px}
+  .method{display:flex;flex-direction:column}
+  .method .badge{display:inline-flex;align-self:flex-start;font-size:11px;font-weight:800;letter-spacing:.06em;color:var(--lc-navy);background:var(--lc-accent);border-radius:5px;padding:4px 8px;margin-bottom:10px}
+  .method h3{font-family:'Inter',sans-serif;font-size:15px;font-weight:700;letter-spacing:0;margin-bottom:6px}
+  .method p{font-size:13px;color:var(--lc-muted);margin-bottom:12px;flex-grow:1}
+  .method input{width:100%;padding:12px 14px;border:1px solid var(--lc-border);border-radius:8px;font:inherit;font-size:14px;margin-bottom:12px}
+  .method input:focus{outline:2px solid var(--lc-accent);border-color:var(--lc-navy)}
+  .method .btn{width:100%;padding:12px 16px;font-size:14px}
+  .qr-drop{border:1.5px dashed var(--lc-border);border-radius:8px;padding:14px;text-align:center;font-size:12.5px;color:var(--lc-muted);margin-bottom:12px;background:var(--lc-light)}
+
+  /* RESULT PANEL (manual verification state) */
+  .result{display:none;margin-top:28px;border:1px solid var(--lc-border);border-left:4px solid var(--lc-accent);border-radius:var(--radius);background:var(--lc-light);padding:22px 24px}
+  .result.show{display:block}
+  .result h3{font-family:'Inter',sans-serif;font-size:16px;letter-spacing:0;margin-bottom:8px}
+  .result p{font-size:14.5px;color:var(--lc-muted);margin-bottom:14px}
+  .result .ctas{display:flex;gap:12px;flex-wrap:wrap}
+  .result .btn{padding:11px 18px;font-size:14px}
+
+  /* SAMPLE RESULT */
+  .sample{background:#fff;border:1px solid var(--lc-border);border-radius:var(--radius-lg);padding:32px 30px}
+  .sample h3{font-size:20px;margin-bottom:16px}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:#E7F6EC;color:var(--lc-green);font-weight:700;font-size:14px;border-radius:999px;padding:8px 16px;margin-bottom:18px}
+  .pill::before{content:"✓";font-weight:800}
+  .kv{width:100%;border-collapse:collapse}
+  .kv td{padding:11px 0;border-bottom:1px solid var(--lc-border);font-size:14px}
+  .kv td:first-child{color:var(--lc-muted)}
+  .kv td:last-child{text-align:right;font-weight:700;color:var(--lc-navy)}
+  .kv tr:last-child td{border-bottom:none}
+  .sample .snote{margin-top:16px;background:var(--lc-light);border-radius:8px;padding:13px 15px;font-size:13px;color:var(--lc-muted);display:flex;gap:10px}
+  .sample .snote::before{content:"✓";width:20px;height:20px;border-radius:50%;background:var(--lc-accent);color:var(--lc-navy);display:grid;place-items:center;font-size:11px;font-weight:800;flex:0 0 20px}
+
+  /* WHAT IT SHOWS */
+  .shows{background:var(--lc-light)}
+  .shows ul{list-style:none;max-width:720px}
+  .shows li{display:flex;gap:12px;padding:10px 0;font-size:16px;color:var(--lc-text)}
+  .shows li::before{content:"";width:9px;height:9px;border-radius:2px;background:var(--lc-accent);flex:0 0 9px;margin-top:8px}
+  .shows .privacy{max-width:760px;margin-top:22px;font-style:italic;color:var(--lc-muted);font-size:15px}
+  .shows .validity{max-width:760px;margin-top:14px;color:var(--lc-muted);font-size:15px}
+  .shows .validity strong{color:var(--lc-navy)}
+
+  /* NEXT STEPS (not found conversion) */
+  .next .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .pcard{background:#fff;border:1px solid var(--lc-border);border-radius:var(--radius-lg);padding:36px 34px}
+  .pcard.navy{background:var(--lc-navy);border-color:var(--lc-navy)}
+  .pcard.navy h3,.pcard.navy p{color:#fff}
+  .pcard.navy p{color:#C9D6E4}
+  .pcard h3{font-size:23px;margin-bottom:12px}
+  .pcard p{color:var(--lc-muted);font-size:15.5px;margin-bottom:20px}
+
+  /* FAQ */
+  .faq{max-width:840px}
+  details{border:1px solid var(--lc-border);border-radius:var(--radius);background:#fff;margin-bottom:12px;overflow:hidden}
+  summary{cursor:pointer;padding:18px 22px;font-weight:600;font-size:16px;color:var(--lc-navy);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-family:'Fraunces',serif;font-size:22px;color:var(--lc-blue)}
+  details[open] summary::after{content:"–"}
+  details p{padding:0 22px 18px;color:var(--lc-muted);font-size:15px}
+
+  footer{background:var(--lc-navy);color:#8FA3B8;font-size:13px;padding:34px 0;text-align:center}
+  footer a{color:#C9D6E4}
+
+  @media(max-width:960px){
+    .verify-grid,.next .pgrid{grid-template-columns:1fr}
+    .methods{grid-template-columns:1fr}
+  }
+  @media(max-width:600px){
+    section{padding:52px 0}
+    .nav-links{display:none}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Less Carbon home"><span class="logo-mark">L</span><span>Less Carbon</span></a>
+    <div class="nav-links">
+      <a href="/sme">For SMEs</a>
+      <a href="/reporting-entities">For Reporting Entities</a>
+      <a href="/partners">Partners</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/registry" style="color:var(--lc-blue)">Registry</a>
+      <a href="/pricing">Pricing</a>
+    </div>
+    <a class="btn btn-primary" href="/sme/#start">Get my price</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Certificate Register</span>
+    <h1>Verify a Supplier Emissions Certificate.</h1>
+    <p class="lede">The Less Carbon Certificate Register lets reporting entities, procurement teams and auditors confirm any Supplier Emissions Certificate is current, genuine and issued by Less Carbon.</p>
+  </div>
+</header>
+
+<!-- VERIFY -->
+<section style="padding-top:32px">
+  <div class="wrap verify-grid">
+    <div class="vcard">
+      <div class="support">
+        <span class="ic">i</span>
+        <div>
+          <h3>Verification support</h3>
+          <p>Online certificate lookup will operate as certificates are issued. In the meantime, verification is completed by our team: submit a request below or email <a href="mailto:verify@lesscarbon.com.au">verify@lesscarbon.com.au</a> and we'll confirm status within one business day.</p>
+        </div>
+      </div>
+      <h2>Check a certificate</h2>
+      <p class="sub">Search by certificate number, ABN, or check via QR code.</p>
+      <div class="methods">
+        <div class="method">
+          <span class="badge">ID</span>
+          <h3>Certificate number</h3>
+          <p>Enter the certificate ID exactly as shown.</p>
+          <input type="text" id="certNo" placeholder="e.g. LC-2026-000123" aria-label="Certificate number">
+          <button class="btn btn-navy" onclick="lcVerify('certificate number', document.getElementById('certNo').value)">Check certificate</button>
+        </div>
+        <div class="method">
+          <span class="badge">ABN</span>
+          <h3>ABN</h3>
+          <p>Use an ABN to find current certificates for a supplier.</p>
+          <input type="text" id="abnNo" placeholder="e.g. 12 345 678 901" aria-label="Supplier ABN">
+          <button class="btn btn-navy" onclick="lcVerify('supplier ABN', document.getElementById('abnNo').value)">Check ABN</button>
+        </div>
+        <div class="method">
+          <span class="badge">QR</span>
+          <h3>QR code</h3>
+          <p>Upload or scan the QR code from a Less Carbon certificate.</p>
+          <div class="qr-drop">⬆ Upload QR code<br>PNG, JPG or PDF up to 10MB</div>
+          <button class="btn btn-ghost" onclick="lcVerify('QR code', 'attached QR code')">Scan QR code</button>
+        </div>
+      </div>
+
+      <div class="result" id="result" role="status" aria-live="polite">
+        <h3 id="resultTitle">Verification request ready</h3>
+        <p id="resultBody">Our team confirms certificate status within one business day.</p>
+        <div class="ctas">
+          <a class="btn btn-primary" id="resultMail" href="mailto:verify@lesscarbon.com.au">Email verification request →</a>
+          <a class="btn btn-ghost" href="/re-scoping/">Supplier not certified? Scope a supplier program →</a>
+        </div>
+      </div>
+    </div>
+
+    <aside class="sample" aria-label="Sample verification result">
+      <h3>Sample verification result</h3>
+      <span class="pill">Valid certificate</span>
+      <table class="kv">
+        <tr><td>Certificate number</td><td>LC-2026-000123</td></tr>
+        <tr><td>Supplier</td><td>Sustainable Supplies Pty Ltd</td></tr>
+        <tr><td>ABN</td><td>12 345 678 901</td></tr>
+        <tr><td>Issue date</td><td>15 May 2026</td></tr>
+        <tr><td>Expiry date</td><td>14 May 2027</td></tr>
+        <tr><td>Scope coverage</td><td>Scope 1 + Scope 2</td></tr>
+        <tr><td>Financial year</td><td>2025–26</td></tr>
+      </table>
+      <div class="snote">This certificate is current and issued by Less Carbon. Verification does not display emissions tonnage.</div>
+    </aside>
+  </div>
+</section>
+
+<!-- WHAT THE REGISTER SHOWS -->
+<section class="shows">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What the register shows</span>
+      <h2>What a verified certificate tells you.</h2>
+      <p>When you look up a certificate, the register confirms:</p>
+    </div>
+    <ul>
+      <li>Certificate status: Valid, Expired, Replaced or Revoked</li>
+      <li>Issue date and expiry date</li>
+      <li>Supplier name</li>
+      <li>Scope coverage (Scope 1 + Scope 2, financial year)</li>
+    </ul>
+    <p class="privacy">The verification result doesn't expose emissions tonnage. That detail stays with the certificate holder, who can share their Assessment Report directly if needed.</p>
+    <p class="validity"><strong>A note on dates:</strong> a certificate reports emissions for the financial year assessed and remains valid for 12 months from its issue date. A certificate covering FY2025–26 data issued in May 2026 stays current until May 2027.</p>
+  </div>
+</section>
+
+<!-- NEXT STEPS -->
+<section class="next">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">No certificate found?</span>
+      <h2>A missing certificate is a starting point, not a dead end.</h2>
+    </div>
+    <div class="pgrid">
+      <div class="pcard navy">
+        <span class="eyebrow">For reporting entities</span>
+        <h3>Supplier not on the register?</h3>
+        <p>It means they don't hold a current Supplier Emissions Certificate. Less Carbon can run the outreach, assessment and certification for your priority suppliers, so your Scope 3 data arrives standardised and audit-ready. Programs covering 50 or more suppliers receive a 20% discount.</p>
+        <a class="btn btn-lime" href="/re-scoping/">Scope a supplier program →</a>
+      </div>
+      <div class="pcard">
+        <span class="eyebrow">For suppliers</span>
+        <h3>Need a certificate?</h3>
+        <p>If a customer has asked you to verify your emissions, a Less Carbon assessment gets you a Supplier Emissions Certificate and 12 months on the register, from $995 + GST, with your fixed price shown in full before you pay.</p>
+        <a class="btn btn-primary" href="/sme/#start">Get my price →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="shows" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Register questions</span>
+      <h2>Common questions.</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>What does a verified certificate confirm?</summary>
+        <p>The register confirms certificate status (Valid, Expired, Replaced or Revoked), issue date and expiry date, supplier name, and scope coverage (Scope 1 + Scope 2 and the financial year assessed). It does not display emissions tonnage; that detail stays with the certificate holder.</p>
+      </details>
+      <details>
+        <summary>How do I verify a Supplier Emissions Certificate?</summary>
+        <p>Check by certificate number, search by supplier ABN, or scan the QR code on a Less Carbon certificate. While certificate volumes build, verification is completed by our team: send your request and we confirm status within one business day.</p>
+      </details>
+      <details>
+        <summary>How long is a certificate valid?</summary>
+        <p>12 months from its date of issue. A certificate reports emissions for the financial year assessed and remains current for 12 months from issue, so a certificate covering FY2025–26 data issued in May 2026 stays valid until May 2027.</p>
+      </details>
+      <details>
+        <summary>What if a supplier isn't on the register?</summary>
+        <p>It means Less Carbon has not issued them a current Supplier Emissions Certificate. Reporting entities can <a href="/re-scoping/">scope a supplier program</a> to have suppliers assessed, and suppliers can <a href="/sme/#start">start their own assessment online</a>, from $995 + GST.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Less Carbon Corporate Services Pty Ltd · ABN 37 698 235 808 · <a href="/methodology/">Methodology</a> · <a href="/pricing/">Pricing</a> · <a href="mailto:verify@lesscarbon.com.au">verify@lesscarbon.com.au</a></div>
+</footer>
+
+<script>
+function lcVerify(kind, value){
+  var v = (value || '').trim();
+  var panel = document.getElementById('result');
+  var title = document.getElementById('resultTitle');
+  var body = document.getElementById('resultBody');
+  var mail = document.getElementById('resultMail');
+  var detail = v ? kind + ': ' + v : kind + ' (details to follow)';
+  title.textContent = 'Verification request ready';
+  body.textContent = 'While certificate volumes build, our team completes each verification personally. Send the ' + kind + ' below and we’ll confirm the certificate’s status within one business day.';
+  mail.href = 'mailto:verify@lesscarbon.com.au?subject=' + encodeURIComponent('Certificate verification request') + '&body=' + encodeURIComponent('Please verify the following ' + detail);
+  panel.classList.add('show');
+  panel.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+</script>
+
+</body>
+</html>
